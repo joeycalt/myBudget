@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 import datetime
 
 class Purchased(models.Model):
-    item = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
     location = models.CharField(max_length=500)
     price = models.CharField(max_length=8)
     date = models.CharField(max_length=500)
@@ -12,10 +12,10 @@ class Purchased(models.Model):
     def __str__(self):
         return self.name
     class Meta:
-        ordering = ['item']
+        ordering = ['name']
 
 class Budget(models.Model):
-    budget = models.CharField(max_length=10)
+    title = models.CharField(max_length=10)
     month = models.CharField(max_length=15)
     purch = models.ForeignKey(
         Purchased, on_delete=models.CASCADE, related_name="buys", null="True")
@@ -24,10 +24,10 @@ class Budget(models.Model):
         return self.title
 
 class Item(models.Model):
-    item = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
     price = models.CharField(max_length=8)
     date = models.CharField(max_length=500)
-    buys = models.ManyToManyField(Budget)
+    buys = models.ManyToManyField(Purchased)
 
     def __str__(self):
         return self.title

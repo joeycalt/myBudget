@@ -33,3 +33,7 @@ h3 {
 p {
     font-size: 12px;
 }
+
+.navbar-item.user {
+    color: black;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="">
+    
+    <div class="">
+        <h3 class="">Budget Tracker</h3>
+        <hr />
+        {% for tracker in trackers %}
+            {% for buy in item.buys.all %}
+
+                <div class="">
+                    <span>{{forloop.counter}}</span>
+                    <span><b>{{buy.name}}</b></span>
+                    <span><b>{{buy.price}}</b></span>
+                    <!-- <span>
+                        <a href="{% url 'favorite_list_assoc' favorite.pk toy.pk %}?assoc=remove" class="button is-danger is-outlined">
+                        <span class="icon is-small">
+                            <i class="fas fa-times">Delete</i>
+                        </span>
+                        </a>
+                    </span> -->
+                </div>
+
+            {% endfor %}
+        </div>
+    {% empty %} 
+        <div class="">"There are no Purchases in this Budget Tracker"</div>
+    {% endfor %}
+</div>
+{% endblock %}

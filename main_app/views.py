@@ -34,7 +34,7 @@ class Signup(View):
 
 class BudgetForm(CreateView):
     model = Purchased
-    fields = ['item', 'price', 'date']
+    fields = ['location', 'name', 'price', 'date']
     template_name = "budget_form.html"
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -64,3 +64,28 @@ class BudgetDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context["items"] = Item.objects.all()
         return context
+
+class BudgetListAssoc(View):
+    def get(self, request, pk, buy_pk):
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            Item.objects.get(pk=pk).buys.remove(buy_pk)
+        if assoc == "add":
+            Item.objects.get(pk=pk).buys.add(buy_pk)
+        return redirect('home')
+
+class TrackerList(TemplateView):
+    template_name = 'purchases.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["trackers"] = Item.objects.all()
+        return context
+
+class BudgetCreate(View):
+    def post(self, request, pk):
+        item = request.POST.get("item")
+        price = request.POST.get("price")
+        date = request.POST.get("date")
+        bought = Purchased.objects.get(pk=pk)
+        Item.objects.create(item=item, price=price, date=date)
+        return redirect('budget_detail', pk=pk)

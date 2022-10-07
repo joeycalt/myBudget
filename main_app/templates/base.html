@@ -20,16 +20,16 @@
                 </div> 
                 {% if user.is_authenticated %}
                 <div>
-                    <a class="navbar-item" href="/budget">List</a>
-                    <a class="navbar-item" href="/budget/new">Add Purchase</a>
-                    <a class="navbar-item" href="/purchases">Puchases</a>
-                    <span class="navbar-item">Welcome: {{user.username}}</span>
-                    <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+                    <a class="navbar-link" href="/budget">List</a>
+                    <a class="navbar-link" href="/budget/new">Add Purchase</a>
+                    <a class="navbar-link" href="/purchases">Puchases</a>
+                    <span class="navbar-item user" >Welcome: {{user.username}}</span>
+                    <a class="navbar-link" href="{% url 'logout' %}">Logout</a>
                 </div>
             {% else %}
                 <div>
                     <a href="{% url 'login' %}">Log In</a>
-                    <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
                 </div>
             {% endif %}                  
             </div>

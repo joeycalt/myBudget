@@ -1,14 +1,13 @@
 {% extends 'base.html' %} 
-{% block title %} {{dog.name}}'s favorite toys {% endblock %}
+{% block title %} {% endblock %}
 {% block content %}
 
-    <h1 class="">{{purchase.location}}</h1>
-</div>
+    <h1 class="">{{purchased.location}}</h1>
 <div class="">
     <div class="">
         
         <h3 class="">Items</h3>
-        <form class="" action="{% url 'budget_detail' purchased.pk %}" method="post">
+        <form class="" action="{% url 'budget_create' purchased.pk %}" method="post">
             {% csrf_token %}
             <div class="">
             <div class="">
@@ -23,7 +22,7 @@
             <div class="">
                 <input
                 class=""
-                type="number"
+                type="text"
                 name="price"
                 placeholder="Price"
                 required
@@ -32,37 +31,31 @@
             <div class="">
                 <input
                 class=""
-                type="number"
+                type="text"
                 name="date"
                 placeholder="Date"
                 required
                 />
             </div>
-            <div>
-                <input/>
+            <div class="control">
+                <input class="button is-primary" type="submit" value="Add Toy" />
             </div>
             </div>
         </form>
       
-    {% for buy in purchased.stores.all %}
+    {% for buy in purchased.items.all %}
     <div class="">
         <span>{{forloop.counter}}</span>
-        <span><b>{{buy.location}}</b></span>
-        <div class="">
-          <div class="">
-          <div class="">
+        <span><b>{{buy.name}}</b></span>
             <div class="">
               {% for store in stores %}
               <span>{{forloop.counter}}</span>
-                {{store.item}}
+                {{store.name}}
                 {{store.price}}
                 {{store.date}}
               </a>
               {% endfor %}
-            </div>
-          </div>
-        </div>
-    </div>
+             </div>   
     <span>
         </span>
      {% empty %}
