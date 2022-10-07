@@ -1,5 +1,5 @@
 # Capstone
-Scope: For my Capstone project I am planning to build an app where a user can track their budget.
+Scope: For my Capstone project I am planning to build an app where a user can track their budget. I will be using Django/Python fullstack to complete this project along with Bootstrap for the styling.
 
 User Stories: The user will be anyone who would like to track their purchases or anyone who would like to be on a strict budget. The user will be able to input where and what the they purchased, and how much money each purchase was. I will try to implement an idea where the site adds up all the cost of each product so the user will be able to see their total and compare it to the budget they entered. 
 
