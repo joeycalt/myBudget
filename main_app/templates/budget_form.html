@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Add your Budget{% endblock %}
+
+{% block content %}
+<div class="new-form">
+<h1>Add your Budget</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input class= 'button' type="submit" value="Submit" />
+ 
+</form>
+</div>
+{% endblock %}
