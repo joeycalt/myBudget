@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+{% block title %}
+{{header}}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="title">{{header}}</h1>
+
+<form class="mb-5" method="get">
+  <div class="field has-addons">
+    <div class="control">
+      <input class="input-list" type="text" name="name" placeholder="search for location" />
+    </div>
+    <div class="control">
+      <input class="button is-success" type="submit" value="Search" />
+    </div>
+  </div>
+  <a class="button is-dark" href="{% url 'budget_list' %}">Clear Search</a>
+</form>
+<div class="gallery">
+  {% for store in stores %}
+  <a href="">
+    <div class="card">
+      <a href="{% url 'budget_detail' store.pk %}" >
+        <div class="card-image">
+        </div>
+        <div class="card-header">
+          <p class="card-header-title">{{store.location}}</p>
+        </div>
+      </a>
+    </div>
+  </a>
+  {% empty %}
+    <h1>No locations found matching your query</h1>
+  {% endfor %}
+</div>
+
+{% endblock %}

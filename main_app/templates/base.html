@@ -13,13 +13,16 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg  navbar-light bg-light">
-            <span class="navbar-brand" href="/">myBudget</span>
+            <a class="navbar-brand" href="/">myBudget</a>
     <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
                 <div class="navbar-nav float-lg-right">
-                    <a class="nav-link" ref="/about">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </div> 
                 {% if user.is_authenticated %}
                 <div>
+                    <a class="navbar-item" href="/budget">List</a>
+                    <a class="navbar-item" href="/budget/new">Add Purchase</a>
+                    <a class="navbar-item" href="/purchases">Puchases</a>
                     <span class="navbar-item">Welcome: {{user.username}}</span>
                     <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
                 </div>

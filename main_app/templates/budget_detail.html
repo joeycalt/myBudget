@@ -1,0 +1,80 @@
+{% extends 'base.html' %} 
+{% block title %} {{dog.name}}'s favorite toys {% endblock %}
+{% block content %}
+
+    <h1 class="">{{purchase.location}}</h1>
+</div>
+<div class="">
+    <div class="">
+        
+        <h3 class="">Items</h3>
+        <form class="" action="{% url 'budget_detail' purchased.pk %}" method="post">
+            {% csrf_token %}
+            <div class="">
+            <div class="">
+                <input
+                class=""
+                type="text"
+                name="item"
+                placeholder="Item"
+                required
+                />
+            </div>
+            <div class="">
+                <input
+                class=""
+                type="number"
+                name="price"
+                placeholder="Price"
+                required
+                />
+            </div>
+            <div class="">
+                <input
+                class=""
+                type="number"
+                name="date"
+                placeholder="Date"
+                required
+                />
+            </div>
+            <div>
+                <input/>
+            </div>
+            </div>
+        </form>
+      
+    {% for buy in purchased.stores.all %}
+    <div class="">
+        <span>{{forloop.counter}}</span>
+        <span><b>{{buy.location}}</b></span>
+        <div class="">
+          <div class="">
+          <div class="">
+            <div class="">
+              {% for store in stores %}
+              <span>{{forloop.counter}}</span>
+                {{store.item}}
+                {{store.price}}
+                {{store.date}}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+    <span>
+        </span>
+     {% empty %}
+            <article>
+                <div>
+                    <p>No Items Available</p>
+                </div>
+            </article>
+
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
