@@ -14,7 +14,7 @@
                 <input
                 class=""
                 type="text"
-                name="item"
+                name="title"
                 placeholder="Item"
                 required
                 />
@@ -42,31 +42,19 @@
             </div>
             </div>
         </form>
-      
-    {% for buy in purchased.items.all %}
-    <div class="">
-        <span>{{forloop.counter}}</span>
-        <span><b>{{buy.name}}</b></span>
-            <div class="">
-              {% for store in stores %}
-              <span>{{forloop.counter}}</span>
-                {{store.name}}
-                {{store.price}}
-                {{store.date}}
-              </a>
-              {% endfor %}
-             </div>   
-    <span>
-        </span>
-     {% empty %}
-            <article>
-                <div>
-                    <p>No Items Available</p>
-                </div>
-            </article>
-
-        {% endfor %}
-    </div>
+        <div>
+            {% for item in items %}
+            <div>
+                {{item.title}}
+            </div>
+            <div>
+                $ {{item.price}}
+            </div>
+            <div>
+                {{item.date}}
+            </div>
+            {% endfor %}
+        </div>
   </div>
 </div>
 

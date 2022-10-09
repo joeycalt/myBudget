@@ -83,9 +83,9 @@ class TrackerList(TemplateView):
 
 class BudgetCreate(View):
     def post(self, request, pk):
-        item = request.POST.get("item")
+        title = request.POST.get("title")
         price = request.POST.get("price")
         date = request.POST.get("date")
         bought = Purchased.objects.get(pk=pk)
-        Item.objects.create(item=item, price=price, date=date)
+        Item.objects.create(title=title, price=price, date=date)
         return redirect('budget_detail', pk=pk)

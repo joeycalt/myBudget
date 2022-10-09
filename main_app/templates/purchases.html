@@ -12,13 +12,13 @@
                     <span>{{forloop.counter}}</span>
                     <span><b>{{buy.name}}</b></span>
                     <span><b>{{buy.price}}</b></span>
-                    <!-- <span>
-                        <a href="{% url 'favorite_list_assoc' favorite.pk toy.pk %}?assoc=remove" class="button is-danger is-outlined">
+                    <span>
+                        <a href="{% url 'budget_list_assoc' budget.pk item.pk %}?assoc=remove" class="button is-danger is-outlined">
                         <span class="icon is-small">
                             <i class="fas fa-times">Delete</i>
                         </span>
                         </a>
-                    </span> -->
+                    </span>
                 </div>
 
             {% endfor %}
