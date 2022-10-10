@@ -10,14 +10,18 @@
         <form class="" action="{% url 'budget_create' purchased.pk %}" method="post">
             {% csrf_token %}
             <div class="">
-            <div class="">
+            <div class="input-group input-group-lg">
+                <span class="input-group-text" id="inputGroup-sizing-lg">
                 <input
-                class=""
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
                 type="text"
                 name="title"
                 placeholder="Item"
                 required
                 />
+                </span>
             </div>
             <div class="">
                 <input
@@ -38,20 +42,44 @@
                 />
             </div>
             <div class="control">
-                <input class="button is-primary" type="submit" value="Add Toy" />
+                <input class="button is-primary" type="submit" value="Add New" />
             </div>
             </div>
         </form>
         <div>
-            {% for item in items %}
+            <button>
+            <a href="{% url 'budget_delete' purchased.pk %}" class="button is-danger">
+              <span class="icon">
+                <i class="fas fa-trash-alt">Delete</i>
+              </span>
+            </a>
+        </button>
+        </div>
+        <div>
+            {% for buy in purchased.buys.all %}
+          <button>
+            <a
+            href="{% url 'budget_list_assoc' purchased.pk buy.pk %}?assoc=add"
+            
+          >Pin
+          </a>
+          </button>
+          <button>
+            <a href="{% url 'budget_update' purchased.pk %}" class="button is-info">
+                <span class="icon">
+                  <i class="fas fa-edit">Edit</i>
+                </span>
+              </a>
+          </button>
+           
             <div>
-                {{item.title}}
+                {{buy.title}}
             </div>
             <div>
-                $ {{item.price}}
+                $ {{buy.price}}
             </div>
             <div>
-                {{item.date}}
+                {{buy.date}}
             </div>
             {% endfor %}
         </div>

@@ -5,8 +5,14 @@
     <div class="">
         <h3 class="">Budget Tracker</h3>
         <hr />
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class= 'button' type="submit" value="Submit" />
+           
+          </form>
         {% for tracker in trackers %}
-            {% for buy in item.buys.all %}
+            {% for buy in purchased.buys.all %}
 
                 <div class="">
                     <span>{{forloop.counter}}</span>

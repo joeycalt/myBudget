@@ -1,17 +1,17 @@
 body {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: white;
+    color: black;
     min-height: 100vh;
 }
 
 h1,
 h2,
 h3 {
-    color: #ffffff;
+    color: black;
 }
 
 .title {
-    color: #ffffff;
+    color: black;
 }
 
 .gallery {
@@ -35,5 +35,30 @@ p {
 }
 
 .navbar-item.user {
-    color: black;
+    color: white;
+}
+
+.detail_add {
+    padding: 10px;
+}
+
+.navbar {
+    background: linear-gradient(180deg, #8000FF, #07000E)!important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+a.navbar-link {
+    color: white;
+    margin: 5px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
 }

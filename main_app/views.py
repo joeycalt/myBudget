@@ -41,7 +41,7 @@ class BudgetForm(CreateView):
         return super(BudgetForm, self).form_valid(form)
     def get_success_url(self):
         print(self.kwargs)
-        return reverse('budget_detail', kwargs={'pk': self.object.pk})
+        return reverse('budget_detail', kwargs={'pk': self.object.pk})  
 
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
@@ -52,7 +52,7 @@ class BudgetList(TemplateView):
             context["stores"] = Purchased.objects.filter(name__icontains=location)
             context['header'] = f"Searching through Budget list for {location}"
         else:
-            context["stores"] = Purchased.objects.filter(user=self.request.user)
+            context["stores"] = Purchased.objects.filter()
             context['header'] = 'Budget List'
         return context
 
@@ -62,7 +62,7 @@ class BudgetDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["items"] = Item.objects.all()
+        context["items"] = Purchased.objects.filter()
         return context
 
 class BudgetListAssoc(View):
@@ -72,14 +72,22 @@ class BudgetListAssoc(View):
             Item.objects.get(pk=pk).buys.remove(buy_pk)
         if assoc == "add":
             Item.objects.get(pk=pk).buys.add(buy_pk)
-        return redirect('home')
+        return redirect('/purchases/')
 
 class TrackerList(TemplateView):
-    template_name = 'purchases.html'
+    model = Budget
+    fields = ['amount', 'month']
+    template_name = 'purchases_done.html'
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(TrackerList, self).form_valid(form)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["trackers"] = Item.objects.all()
         return context
+     def get_success_url(self):
+        print(self.kwargs)
+        return reverse('purchases_done', kwargs={'pk': self.object.pk})  
 
 class BudgetCreate(View):
     def post(self, request, pk):
@@ -89,3 +97,17 @@ class BudgetCreate(View):
         bought = Purchased.objects.get(pk=pk)
         Item.objects.create(title=title, price=price, date=date)
         return redirect('budget_detail', pk=pk)
+
+class BudgetUpdate(UpdateView):
+    model = Purchased
+    fields = ['title', 'price', 'date']
+    template_name = "budget_update.html"
+    success_url = "/budget/"
+
+    def get_success_url(self):
+        return reverse('budget_detail', kwargs={'pk': self.object.pk})
+
+class BudgetDelete(DeleteView):
+    model = Purchased
+    template_name = "budget_delete.html"
+    success_url = "/budget/"
