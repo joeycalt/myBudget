@@ -62,7 +62,7 @@ class BudgetDetail(DetailView):
     template_name = "budget_detail.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["items"] = Purchased.objects.filter('name')
+        context["items"] = Item.objects.filter()
         print(context['items'])
         return context
     
@@ -89,16 +89,17 @@ class BudgetForm(CreateView):
 
 class BudgetCreate(View):
     def post(self, request, pk):
+        name = request.POST.get("name")
         title = request.POST.get("title")
         price = request.POST.get("price")
         date = request.POST.get("date")
-        bought = Purchased.objects.get(pk=pk)
-        Item.objects.create(title=title, price=price, date=date)
+        bought = Budget.objects.get(pk=pk)
+        Item.objects.create(name=name, title=title, price=price, date=date)
         return redirect('budget_detail', pk=pk)
 
 class BudgetUpdate(UpdateView):
-    model = Purchased
-    fields = ['title', 'price', 'date']
+    model = Item
+    fields = ['name', 'title', 'price', 'date']
     template_name = "budget_update.html"
     success_url = "/budget/"
 

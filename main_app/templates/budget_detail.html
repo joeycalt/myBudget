@@ -2,12 +2,12 @@
 {% block title %} {% endblock %}
 {% block content %}
 
-    <h1 class="">{{purchased.name}}</h1>
+    <h1 class="">Your Budget Limit for the month of {{budget.month}} is: ${{budget}}</h1>
 <div class="">
     <div class="">
         
         <h3 class="">Items</h3>
-        <form class="" action="{% url 'budget_create' budget.pk %}" method="post">
+        <form class="" action="{% url 'budget_create' item.pk %}" method="post">
             {% csrf_token %}
             <div class="">
             <div class="">
@@ -54,7 +54,17 @@
         </form>
         <div>
             <button>
-            <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
+                <a href="{% url 'budget_delete' item.pk %}" class="button is-danger">
+                  <span class="icon">
+                    <i class="fas fa-trash-alt">Delete</i>
+                  </span>
+                </a>
+            </button>
+        </div>
+        <hr />
+            {% for item in items %}
+            <button>
+            <a href="{% url 'budget_delete' item.pk %}" class="button is-danger">
               <span class="icon">
                 <i class="fas fa-trash-alt">Delete</i>
               </span>
@@ -62,24 +72,19 @@
         </button>
         </div>
         <div>
-            {% for item in items %}
           <button>
-            <a
-            href="{% url 'budget_list_assoc' budget.pk item.pk %}?assoc=add"
-            
-          >Pin
-          </a>
-          </button>
-          <button>
-            <a href="{% url 'budget_update' budget.pk %}" class="button is-info">
+            <a href="{% url 'budget_update' item.pk %}" class="button is-info">
                 <span class="icon">
                   <i class="fas fa-edit">Edit</i>
                 </span>
               </a>
           </button>
            
+          <div>
+              {{item.name}}
+          </div>
             <div>
-                {{item.item}}
+                {{item.title}}
             </div>
             <div>
                 $ {{item.price}}
