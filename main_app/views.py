@@ -48,22 +48,21 @@ class BudgetList(TemplateView):
     template_name = "budget_list.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        location = self.request.GET.get("location")
-        if location != None:
-            context["stores"] = Budget.objects.filter(name__icontains=location)
-            context['header'] = f"Searching through Budget list for {location}"
+        time = self.request.GET.get("time")
+        if time != None:
+            context["stores"] = Budget.objects.filter(name__icontains=time)
+            context['header'] = f"Searching through Budget list for {time}"
         else:
             context["stores"] = Budget.objects.all()
             context['header'] = 'Budget List'
         return context
 
 class BudgetDetail(DetailView):
-    model = Item
+    model = Budget
     template_name = "budget_detail.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["items"] = Item.objects.filter()
-        print(context['items'])
         return context
     
 
@@ -101,12 +100,13 @@ class BudgetUpdate(UpdateView):
     model = Item
     fields = ['name', 'title', 'price', 'date']
     template_name = "budget_update.html"
-    success_url = "/budget/"
+    success_url = "/budget/<int:pk>"
 
     def get_success_url(self):
         return reverse('budget_detail', kwargs={'pk': self.object.pk})
+    
 
 class BudgetDelete(DeleteView):
-    model = Purchased
+    model = Budget
     template_name = "budget_delete.html"
     success_url = "/budget/"

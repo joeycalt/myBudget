@@ -1,100 +1,80 @@
 {% extends 'base.html' %} 
-{% block title %} {% endblock %}
+{% block title %} {{header}} {% endblock %}
 {% block content %}
-
-    <h1 class="">Your Budget Limit for the month of {{budget.month}} is: ${{budget}}</h1>
-<div class="">
-    <div class="">
-        
-        <h3 class="">Items</h3>
-        <form class="" action="{% url 'budget_create' item.pk %}" method="post">
+<h1>Your budget for the month of {{budget.month}} is: ${{budget.amount}}</h1>
+<div>
+    <h2>Add Purchase</h2>
+    <div>
+        <form class="mb-5" action="{% url 'budget_create' budget.pk %}" method="post">
             {% csrf_token %}
-            <div class="">
-            <div class="">
-            <div class="">
-                <input
-                class=""
-                type="text"
-                name="name"
-                placeholder="Company"
-                required
-                />
-            </div>
             <div>
-                <input
-                class=""
-                type="text"
-                name="title"
-                placeholder="Item"
-                required
-                />
-            </div>
-            <div class="">
-                <input
-                class=""
-                type="text"
-                name="price"
-                placeholder="Price"
-                required
-                />
-            </div>
-            <div class="">
-                <input
-                class=""
-                type="text"
-                name="date"
-                placeholder="Date"
-                required
-                />
-            </div>
-            <div class="control">
-                <input class="button is-primary" type="submit" value="Add New" />
-            </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="name"
+                    placeholder="Company Name"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="title"
+                    placeholder="Item"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="price"
+                    placeholder="Price"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="date"
+                    placeholder="Date"
+                    required
+                    />
+                </div>
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Add Purchase" />
+                </div>
             </div>
         </form>
-        <div>
-            <button>
-                <a href="{% url 'budget_delete' item.pk %}" class="button is-danger">
-                  <span class="icon">
-                    <i class="fas fa-trash-alt">Delete</i>
-                  </span>
-                </a>
-            </button>
-        </div>
-        <hr />
-            {% for item in items %}
-            <button>
-            <a href="{% url 'budget_delete' item.pk %}" class="button is-danger">
-              <span class="icon">
-                <i class="fas fa-trash-alt">Delete</i>
-              </span>
-            </a>
-        </button>
-        </div>
-        <div>
-          <button>
-            <a href="{% url 'budget_update' item.pk %}" class="button is-info">
-                <span class="icon">
-                  <i class="fas fa-edit">Edit</i>
-                </span>
-              </a>
-          </button>
-           
-          <div>
-              {{item.name}}
-          </div>
-            <div>
-                {{item.title}}
-            </div>
-            <div>
-                $ {{item.price}}
-            </div>
-            <div>
-                {{item.date}}
-            </div>
-            {% endfor %}
-        </div>
-  </div>
+        <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
+            <span class="icon">
+              <i class="fas fa-trash-alt">Delete</i>
+            </span>
+          </a>
+       {% for item in items.all %}
+       <div>
+        <h1>{{item.name}}</h1>
+       </div>
+       <div>
+        {{item.title}}
+       </div>
+       <div>
+        $ {{item.price}}
+       </div>
+       <div>
+        {{item.date}}
+    </div>
+    <div>
+        <a href="{% url 'budget_update' item.pk %}" class="button is-info">
+            <span class="icon">
+              <i class="fas fa-edit">Edit</i>
+            </span>
+          </a>
+    </div>
+    {% endfor %}
+    </div>
 </div>
-
 {% endblock %}

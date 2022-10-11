@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block title %} Update {{purchased.name}} {% endblock %}
 {% block content %}
-<h1 class="pt-3">Update {{purchased.name}}</h1>
+<h1 class="pt-3">Update {{item.name}}</h1>
 
 <form action="" method="post">
   {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit" />
