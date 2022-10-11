@@ -2,26 +2,32 @@
 {% block title %} {% endblock %}
 {% block content %}
 
-    <h1 class="">{{purchased.location}}</h1>
+    <h1 class="">{{purchased.name}}</h1>
 <div class="">
     <div class="">
         
         <h3 class="">Items</h3>
-        <form class="" action="{% url 'budget_create' purchased.pk %}" method="post">
+        <form class="" action="{% url 'budget_create' budget.pk %}" method="post">
             {% csrf_token %}
             <div class="">
-            <div class="input-group input-group-lg">
-                <span class="input-group-text" id="inputGroup-sizing-lg">
+            <div class="">
+            <div class="">
                 <input
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-lg"
+                class=""
+                type="text"
+                name="name"
+                placeholder="Company"
+                required
+                />
+            </div>
+            <div>
+                <input
+                class=""
                 type="text"
                 name="title"
                 placeholder="Item"
                 required
                 />
-                </span>
             </div>
             <div class="">
                 <input
@@ -48,7 +54,7 @@
         </form>
         <div>
             <button>
-            <a href="{% url 'budget_delete' purchased.pk %}" class="button is-danger">
+            <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
               <span class="icon">
                 <i class="fas fa-trash-alt">Delete</i>
               </span>
@@ -56,16 +62,16 @@
         </button>
         </div>
         <div>
-            {% for buy in purchased.buys.all %}
+            {% for item in items %}
           <button>
             <a
-            href="{% url 'budget_list_assoc' purchased.pk buy.pk %}?assoc=add"
+            href="{% url 'budget_list_assoc' budget.pk item.pk %}?assoc=add"
             
           >Pin
           </a>
           </button>
           <button>
-            <a href="{% url 'budget_update' purchased.pk %}" class="button is-info">
+            <a href="{% url 'budget_update' budget.pk %}" class="button is-info">
                 <span class="icon">
                   <i class="fas fa-edit">Edit</i>
                 </span>
@@ -73,13 +79,13 @@
           </button>
            
             <div>
-                {{buy.title}}
+                {{item.item}}
             </div>
             <div>
-                $ {{buy.price}}
+                $ {{item.price}}
             </div>
             <div>
-                {{buy.date}}
+                {{item.date}}
             </div>
             {% endfor %}
         </div>

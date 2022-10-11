@@ -1,9 +1,9 @@
-{% extends 'base.html' %} 
+<!-- {% extends 'base.html' %} 
 {% block content %}
 <div class="">
     
     <div class="">
-        <h3 class="">Budget Tracker</h3>
+        <h3 class="">Add your budget</h3>
         <hr />
         <form method="post">
             {% csrf_token %}
@@ -11,26 +11,4 @@
             <input class= 'button' type="submit" value="Submit" />
            
           </form>
-        {% for tracker in trackers %}
-            {% for buy in purchased.buys.all %}
-
-                <div class="">
-                    <span>{{forloop.counter}}</span>
-                    <span><b>{{buy.name}}</b></span>
-                    <span><b>{{buy.price}}</b></span>
-                    <span>
-                        <a href="{% url 'budget_list_assoc' budget.pk item.pk %}?assoc=remove" class="button is-danger is-outlined">
-                        <span class="icon is-small">
-                            <i class="fas fa-times">Delete</i>
-                        </span>
-                        </a>
-                    </span>
-                </div>
-
-            {% endfor %}
-        </div>
-    {% empty %} 
-        <div class="">"There are no Purchases in this Budget Tracker"</div>
-    {% endfor %}
-</div>
-{% endblock %}
+{% endblock %} -->

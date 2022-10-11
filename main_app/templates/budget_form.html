@@ -1,15 +1,14 @@
-{% extends 'base.html' %}
-{% block title %}Add your new purchase{% endblock %}
-
+{% extends 'base.html' %} 
 {% block content %}
-<div class="new-form">
-<h1>New purchase</h1>
-
-<form method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input class= 'button' type="submit" value="Submit" />
- 
-</form>
-</div>
+<div class="">
+    
+    <div class="">
+        <h3 class="">Add your budget</h3>
+        <hr />
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class= 'button' type="submit" value="Submit" />
+           
+          </form>
 {% endblock %}
