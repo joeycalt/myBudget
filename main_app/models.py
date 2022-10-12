@@ -23,7 +23,7 @@ class Item(models.Model):
     title = models.CharField(max_length=100)
     price = models.CharField(max_length=8)
     date = models.CharField(max_length=500)
-    buys = models.ManyToManyField(Purchased, blank=True, related_name='buys')
+    buys = models.ManyToManyField(Budget, related_name='buys')
 
     def __str__(self):
         return self.title

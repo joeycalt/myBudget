@@ -4,9 +4,11 @@
 <h1>Your budget for the month of {{budget.month}} is: ${{budget.amount}}</h1>
 <div>
     <h2>Add Purchase</h2>
+    
     <div>
         <form class="mb-5" action="{% url 'budget_create' budget.pk %}" method="post">
             {% csrf_token %}
+            
             <div>
                 <div>
                     <input
@@ -54,9 +56,10 @@
               <i class="fas fa-trash-alt">Delete</i>
             </span>
           </a>
-       {% for item in items.all %}
+       {% for item in budget.buys.all %}
        <div>
         <h1>{{item.name}}</h1>
+        
        </div>
        <div>
         {{item.title}}
