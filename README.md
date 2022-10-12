@@ -17,3 +17,7 @@ Data Models:
 Milestones: Most essential- User to be able to input the purchase they made, i.e. what they purchased, from where, and how much. The user will be able to delete or edit the inputs. Lastly, be able to select specific purchases and pin them to the main list. ***(Expect to be done by 10/11/22)***
 Important features- User to be able to search for a product in case they need to make an edit or delete. As well as pagination. ***(Expect to be done by 10/13/22)***
 Features to be saved- User to be able to insert their weekly budget and each purchase to be added up so the user can easily see how close they are to reaching their budget. ***(Expect to be done by 10/16/22)***
+
+
+
+

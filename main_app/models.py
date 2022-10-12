@@ -15,7 +15,7 @@ class Purchased(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     budget = models.ForeignKey(
-        Budget, on_delete=models.CASCADE, related_name="budget", null=True)
+        Budget, on_delete=models.CASCADE, related_name="budget", default=1)
 
 
 class Item(models.Model):

@@ -22,7 +22,7 @@
                 {% if user.is_authenticated %}
                     <a class="navbar-link" href="/budget">List</a>
                     <a class="navbar-link" href="/budget/new">Add a Budget</a>
-                    <!-- <a class="navbar-link" href="/purchases">Puchases</a> -->
+                    <!-- <a class="navbar-link" href="/purchases">Add a Purchase</a> -->
                     <span class="navbar-item user" >Welcome: {{user.username}}</span>
                     <span type="button" class="btn btn-dark">
                     <a class="navbar-link" href="{% url 'logout' %}">

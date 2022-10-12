@@ -3,12 +3,58 @@
 <div class="">
     
     <div class="">
-        <h3 class="">Add your budget</h3>
+        <h3 class="">Add your purchase</h3>
         <hr />
+        <form class="mb-5" action="{% url 'budget_create'  %}" method="post">
+            {% csrf_token %}
+            
+            <div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="name"
+                    placeholder="Company Name"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="title"
+                    placeholder="Item"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="price"
+                    placeholder="Price"
+                    required
+                    />
+                </div>
+                <div>
+                    <input
+                    class=""
+                    type="text"
+                    name="date"
+                    placeholder="Date"
+                    required
+                    />
+                </div>
+                <div class="control">
+                    <input class="button is-primary" type="submit" value="Add Purchase" />
+                </div>
+            </div>
+        </form>
         <form method="post">
             {% csrf_token %}
             {{form.as_p}}
             <input class= 'button' type="submit" value="Submit" />
            
           </form>
+
 {% endblock %} -->

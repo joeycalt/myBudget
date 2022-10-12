@@ -1,14 +1,13 @@
 {% extends 'base.html' %} 
 {% block title %} {{header}} {% endblock %}
 {% block content %}
-<h1>Your budget for the month of {{budget.month}} is: ${{budget.amount}}</h1>
+<h1>{{user.username}}'s budget for the month of {{budget.month}}: ${{budget.amount}}</h1>
 <div>
     <h2>Add Purchase</h2>
     
     <div>
         <form class="mb-5" action="{% url 'budget_create' budget.pk %}" method="post">
             {% csrf_token %}
-            
             <div>
                 <div>
                     <input
@@ -51,31 +50,34 @@
                 </div>
             </div>
         </form>
+        <div>
         <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
             <span class="icon">
-              <i class="fas fa-trash-alt">Delete</i>
+                <i class="fas fa-trash-alt">Delete</i>
             </span>
-          </a>
-       {% for item in budget.buys.all %}
+        </a>
+        </div>
+        {% for item in budget.buys.all %}
        <div>
-        <h1>{{item.name}}</h1>
+        <h1>Company: {{item.name}}</h1>
         
        </div>
        <div>
+        Item: 
         {{item.title}}
        </div>
-       <div>
-        $ {{item.price}}
+       <div>Price: 
+        ${{item.price}}
        </div>
-       <div>
+       <div>Date: 
         {{item.date}}
     </div>
     <div>
         <a href="{% url 'budget_update' item.pk %}" class="button is-info">
             <span class="icon">
-              <i class="fas fa-edit">Edit</i>
+                <i class="fas fa-edit">Edit</i>
             </span>
-          </a>
+        </a>
     </div>
     {% endfor %}
     </div>

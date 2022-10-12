@@ -32,23 +32,23 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
 
-# class BudgetForm(CreateView):
+# class AddPurchase(CreateView):
 #     model = Purchased
 #     fields = ['budget']
-#     template_name = "budget_form.html"
+#     template_name = "purchases_done.html"
 #     success_url = '/'
 #     def form_valid(self, form):
 #         form.instance.user = self.request.user
 #         return super(BudgetForm, self).form_valid(form)
-#     # def get_success_url(self):
-#     #     print(self.kwargs)
-#     #     return reverse('budget_detail', kwargs={'pk': self.object.pk})  
+    # def get_success_url(self):
+    #     print(self.kwargs)
+    #     return reverse('budget_detail', kwargs={'pk': self.object.pk})  
 
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        time = self.request.GET.get("time")
+        time = self.request.GET.get("budget")
         if time != None:
             context["stores"] = Budget.objects.filter(name__icontains=time)
             context['header'] = f"Searching through Budget list for {time}"
@@ -63,18 +63,17 @@ class BudgetDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["items"] = Item.objects.all()
-        print(context["items"])
+        # print(context["items"])
         return context
-    
-
-class BudgetListAssoc(View):
-    def get(self, request, pk, buy_pk):
-        assoc = request.GET.get("assoc")
-        if assoc == "remove":
-            Item.objects.get(pk=pk).buys.remove(buy_pk)
-        if assoc == "add":
-            Item.objects.get(pk=pk).buys.add(buy_pk)
-        return redirect('/purchases/')
+        
+# class BudgetListAssoc(View):
+#     def get(self, request, pk, buy_pk):
+#         assoc = request.GET.get("assoc")
+#         if assoc == "remove":
+#             Item.objects.get(pk=pk).buys.remove(buy_pk)
+#         if assoc == "add":
+#             Item.objects.get(pk=pk).buys.add(buy_pk)
+#         return redirect('/purchases/')
 
 class BudgetForm(CreateView):
     model = Budget
@@ -93,7 +92,7 @@ class BudgetCreate(View):
         title = request.POST.get("title")
         price = request.POST.get("price")
         date = request.POST.get("date")
-        bought = Item.objects.get(pk=pk)
+        bought = Item.objects.filter(pk=pk)
         Item.objects.create(name=name, title=title, price=price, date=date)
         return redirect('budget_detail', pk=pk)
 
@@ -101,7 +100,7 @@ class BudgetUpdate(UpdateView):
     model = Item
     fields = ['name', 'title', 'price', 'date']
     template_name = "budget_update.html"
-    success_url = "/budget/<int:pk>"
+    success_url = "/budget/"
 
     def get_success_url(self):
         return reverse('budget_detail', kwargs={'pk': self.object.pk})
