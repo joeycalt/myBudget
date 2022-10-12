@@ -10,6 +10,10 @@ h3 {
     color: black;
 }
 
+a {
+    text-decoration: none;
+}
+
 .title {
     color: black;
 }
@@ -44,8 +48,8 @@ p {
 
 .navbar {
     background: linear-gradient(180deg, #8000FF, #07000E)!important;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 25px;
+    font-size: 20px;
 }
 
 a.navbar-link {
@@ -53,12 +57,73 @@ a.navbar-link {
     margin: 5px;
     text-decoration: none;
     padding: 10px;
+    font-size: 20px;
+}
+
+.btn-dark.rounded-pill {
+    margin-left: 40px;
 }
 
 .navbar-brand {
     color: white;
+    font-size: 30px;
 }
 
 .navbar-brand:hover {
     color: white;
+}
+
+p.card-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #8000FF!important;
+    text-decoration: none!important;
+    text-align: center;
+}
+
+.card-title-two {
+    color: black;
+    font-weight: 400;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 10px 0 10px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.p-footer {
+    font-size: 15px;
+}
+
+input.rounded-pill {
+    height: 50px!important;
+    width: 400px!important;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+input.search.rounded-pill {
+    width: 100px!important;
+    background: #8000FF!important;
+    color: white;
+}
+
+.detail-header {
+    font-size: 40px;
+    margin: 80px 0 40px 20px;
+}
+
+.detail-amount {
+    font-size: 60px;
+    color: #8000FF;
+}
+
+.detail-spent {
+    float: right;
+    font-size: 40px;
+    margin: 0 40px 40px 20px;
 }

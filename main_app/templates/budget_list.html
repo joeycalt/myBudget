@@ -4,19 +4,16 @@
 {% endblock %}
 
 {% block content %}
-
-<h1 class="title">{{header}}</h1>
-
 <form class="mb-5" method="get">
   <div class="field has-addons">
     <div class="control">
-      <input class="input-list" type="text" name="name" placeholder="search for location" />
+      <input  class="rounded-pill" />
+      <input class="search rounded-pill" type="submit" value="Search" />
+      <a class="button is-dark" href="{% url 'budget_list' %}">Clear Search</a>
     </div>
-    <div class="control">
-      <input class="button is-success" type="submit" value="Search" />
-    </div>
+    
+    
   </div>
-  <a class="button is-dark" href="{% url 'budget_list' %}">Clear Search</a>
 </form>
 <div class="gallery">
   {% for store in stores %}
@@ -25,9 +22,14 @@
       <a href="{% url 'budget_detail' store.pk %}" >
         <div class="card-image">
         </div>
-        <div class="card-header">
-          <p class="card-header-title">Your Budget limit: ${{store.amount}}</p>
-          <p class="card-header-title">Month: {{store.month}}</p>
+        <div class="card">
+            <img src="https://i.im.ge/2022/10/13/2OZTgp.Screen-Shot-2022-10-12-at-3-34-02-PM.png" class="card-img-top" alt="">
+            <div class="card-body">
+          <p class="card-title">Your Budget limit: 
+            <span class='card-title-two'>${{store.amount}}</span></p>
+          <p class="card-title"> Month: 
+            <span class='card-title-two'>{{store.month}}</span></p>
+          </div>
         </div>
       </a>
     </div>
@@ -37,4 +39,9 @@
   {% endfor %}
 </div>
 
+<footer class="footer">
+    <p class="p-footer">Created by: Joey Caltabellotta</p>
+    <p class="p-footer">Contact: joeycalt@yahoo.com</p>
+    <p class="p-footer">©2022</p>
+</footer>
 {% endblock %}

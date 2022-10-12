@@ -62,18 +62,18 @@ class BudgetDetail(DetailView):
     template_name = "budget_detail.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["items"] = Item.objects.all()
-        # print(context["items"])
+        context["items"] = Item.objects.filter()
         return context
         
-# class BudgetListAssoc(View):
-#     def get(self, request, pk, buy_pk):
-#         assoc = request.GET.get("assoc")
-#         if assoc == "remove":
-#             Item.objects.get(pk=pk).buys.remove(buy_pk)
-#         if assoc == "add":
-#             Item.objects.get(pk=pk).buys.add(buy_pk)
-#         return redirect('/purchases/')
+
+class BudgetListAssoc(View):
+    def get(self, request, pk, buy_pk):
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            Item.objects.get(pk=pk).buys.remove(buy_pk)
+        if assoc == "add":
+            Item.objects.get(pk=pk).buys.add(buy_pk)
+        return redirect('/purchases/')
 
 class BudgetForm(CreateView):
     model = Budget
@@ -92,18 +92,17 @@ class BudgetCreate(View):
         title = request.POST.get("title")
         price = request.POST.get("price")
         date = request.POST.get("date")
-        bought = Item.objects.filter(pk=pk)
-        Item.objects.create(name=name, title=title, price=price, date=date)
+        bought = Budget.objects.get(pk=pk)
+        new_item = Item.objects.create(name=name, title=title, price=price, date=date)
+        new_item.buys.add(bought.pk)
         return redirect('budget_detail', pk=pk)
 
-class BudgetUpdate(UpdateView):
+class ItemUpdate(UpdateView):
     model = Item
     fields = ['name', 'title', 'price', 'date']
-    template_name = "budget_update.html"
-    success_url = "/budget/"
-
+    template_name = "item_update.html"
     def get_success_url(self):
-        return reverse('budget_detail', kwargs={'pk': self.object.pk})
+        return reverse('budget_detail', kwargs={'pk': self.kwargs['budget_pk']})
     
 
 class BudgetDelete(DeleteView):

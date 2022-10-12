@@ -1,7 +1,10 @@
 {% extends 'base.html' %} 
 {% block title %} {{header}} {% endblock %}
 {% block content %}
-<h1>{{user.username}}'s budget for the month of {{budget.month}}: ${{budget.amount}}</h1>
+<h1 class="detail-header">{{user.username}}'s budget for {{budget.month}}<p class="detail-spent">Total spent so far</p>
+    <p class= 'detail-amount'>${{budget.amount}}</p> </h1>
+    
+    <hr />
 <div>
     <h2>Add Purchase</h2>
     
@@ -11,7 +14,7 @@
             <div>
                 <div>
                     <input
-                    class=""
+                    class="name rounded-pill"
                     type="text"
                     name="name"
                     placeholder="Company Name"
@@ -20,7 +23,7 @@
                 </div>
                 <div>
                     <input
-                    class=""
+                    class="item rounded-pill"
                     type="text"
                     name="title"
                     placeholder="Item"
@@ -29,7 +32,7 @@
                 </div>
                 <div>
                     <input
-                    class=""
+                    class="price rounded-pill"
                     type="text"
                     name="price"
                     placeholder="Price"
@@ -38,7 +41,7 @@
                 </div>
                 <div>
                     <input
-                    class=""
+                    class="date rounded-pill"
                     type="text"
                     name="date"
                     placeholder="Date"
@@ -73,7 +76,7 @@
         {{item.date}}
     </div>
     <div>
-        <a href="{% url 'budget_update' item.pk %}" class="button is-info">
+        <a href="{% url 'item_update' budget.pk item.pk %}" class="button is-info">
             <span class="icon">
                 <i class="fas fa-edit">Edit</i>
             </span>
