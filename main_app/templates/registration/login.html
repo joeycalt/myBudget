@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,16 +41,28 @@
             </div>
         </nav>
         <h1 class="title-login">Log In</h1>
+        {% block content %}
 <form class='sign-in' method="post" action="{% url 'login' %}">
-    {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="login" />
-    <input type="hidden" name="next" value="{{ next }}" />
+    {% csrf_token %}
+    <div class="form-row">
+        <div class="form-group col-4">
+            {{ form.username|as_crispy_field }}
+            <div class="text-input">
+            
+            </div>
+        </div>
+        <div class="form-group col-4">
+            {{ form.password|as_crispy_field }}
+            <div class="text-input rounded-pill">
+               
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn">Log in</button>
 </form>
+{% endblock %}
 </div>
     <div class="container">
-
-            {% block content %}{% endblock %}
-
         </div>
       </div>
     </div>

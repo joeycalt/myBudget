@@ -10,6 +10,10 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from .models import Budget, Purchased, Item
+from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Submit, Div
+
 
 class Home(TemplateView):
     template_name = "home.html"
@@ -24,13 +28,24 @@ class Signup(View):
         return render(request, "registration/signup.html", context)
     def post(self, request):
         form = UserCreationForm(request.POST)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div('username', css_class='form-group col-4'),
+                Div('password', css_class='form-group col-4'),
+                Div('email_field', css_class='text-input rounded-pill'),
+                css_class='form-row'
+            )
+        )
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect("budget_form")
         else:
             context = {"form": form}
-            return render(request, "registration/signup.html", context)
+            return render(request, "registration/signup.html", 'crispy_forms.html', context)
 
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
