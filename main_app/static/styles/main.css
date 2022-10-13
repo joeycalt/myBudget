@@ -10,6 +10,10 @@ h3 {
     color: black;
 }
 
+h6 {
+    font-weight: 600;
+}
+
 a {
     text-decoration: none;
 }
@@ -48,7 +52,7 @@ p {
 
 .navbar {
     background: linear-gradient(180deg, #8000FF, #07000E)!important;
-    padding: 25px;
+    padding: 15px;
     font-size: 20px;
 }
 
@@ -62,6 +66,7 @@ a.navbar-link {
 
 .btn-dark.rounded-pill {
     margin-left: 40px;
+    border: none;
 }
 
 .navbar-brand {
@@ -90,7 +95,7 @@ p.card-title {
     background-color: black;
     color: white;
     padding: 10px 0 10px 0;
-    margin-top: 50px;
+    margin-top: 200px;
     text-align: center;
 }
 
@@ -104,12 +109,17 @@ input.rounded-pill {
     font-size: 20px;
     margin-top: 50px;
     margin-bottom: 70px;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: bold;
+    border: none;
 }
 
 input.search.rounded-pill {
     width: 100px!important;
     background: #8000FF!important;
     color: white;
+    border: none;
 }
 
 .detail-header {
@@ -126,4 +136,91 @@ input.search.rounded-pill {
     float: right;
     font-size: 40px;
     margin: 0 40px 40px 20px;
+}
+
+input.detail.rounded-pill {
+    margin: 15px;
+    text-align: center;
+    color: #8000FF;
+    font-weight: bold;
+    background-color: #f2e4ff;
+    width: 300px!important;
+    border: none;
+}
+
+.detail-form {
+    text-align: center;
+}
+
+.purchase-title {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.delete-button {
+    height: 30px;
+    width: 30px;
+}
+
+button.btn-labeled.btn-danger {
+    background-color: white!important;
+    border: none;
+}
+
+input.add.rounded-pill {
+    width: 210px!important;
+    background-color: #8000FF;
+    color: white;
+    border: none;
+}
+
+.company.detail.rounded-pill {
+    width: 450px!important;
+}
+
+.item-price.detail.rounded-pill {
+    width: 210px!important;
+}
+
+.date-add.detail.rounded-pill {
+    width: 230px!important;
+}
+
+.spending {
+    text-align: left;
+    margin-bottom: 70px;
+}
+
+.detail-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    text-align: left;
+}
+
+.button.is-info {
+    margin-top: 18px;
+    text-align: center;
+}
+
+.company {
+    font-weight: 200;
+}
+
+.price {
+    font-weight: 200;
+}
+
+.item {
+    font-weight: 200;
+}
+
+.date {
+    font-weight: 200;
+}
+
+.edit {
+    height: 30px;
+    width: 30px;
 }

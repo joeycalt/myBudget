@@ -1,12 +1,23 @@
 {% extends 'base.html' %} 
 {% block title %} {{header}} {% endblock %}
 {% block content %}
-<h1 class="detail-header">{{user.username}}'s budget for {{budget.month}}<p class="detail-spent">Total spent so far</p>
+<h1 class="detail-header">{{user.username}}'s budget for {{budget.month}}
+    <span class="detail-delete">
+        <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
+            <span class="btn-label"">
+                <button type="button" class="btn btn-labeled btn-danger">
+                    <img class="delete-button" src="https://cdn2.iconfinder.com/data/icons/round-interface-1/217/50-1024.png" alt="">
+            </button>
+                
+            </span>
+        </a>
+    </span>
+    <p class="detail-spent">Total spent so far</p>
     <p class= 'detail-amount'>${{budget.amount}}</p> </h1>
     
     <hr />
-<div>
-    <h2>Add Purchase</h2>
+<div class="detail-form">
+    <h2 class="purchase-title">What did you buy?</h2>
     
     <div>
         <form class="mb-5" action="{% url 'budget_create' budget.pk %}" method="post">
@@ -14,7 +25,7 @@
             <div>
                 <div>
                     <input
-                    class="name rounded-pill"
+                    class="company detail rounded-pill"
                     type="text"
                     name="name"
                     placeholder="Company Name"
@@ -23,65 +34,69 @@
                 </div>
                 <div>
                     <input
-                    class="item rounded-pill"
+                    class=" item-price detail rounded-pill"
                     type="text"
                     name="title"
                     placeholder="Item"
                     required
                     />
-                </div>
-                <div>
                     <input
-                    class="price rounded-pill"
+                    class="item-price detail rounded-pill"
                     type="text"
                     name="price"
                     placeholder="Price"
+                    value="$"
                     required
                     />
-                </div>
-                <div>
                     <input
-                    class="date rounded-pill"
+                    class="date-add detail rounded-pill"
                     type="text"
                     name="date"
                     placeholder="Date"
                     required
                     />
+                    <div>
+                    <input class="add rounded-pill" type="submit" value="Add Purchase" />
                 </div>
-                <div class="control">
-                    <input class="button is-primary" type="submit" value="Add Purchase" />
                 </div>
             </div>
         </form>
-        <div>
-        <a href="{% url 'budget_delete' budget.pk %}" class="button is-danger">
-            <span class="icon">
-                <i class="fas fa-trash-alt">Delete</i>
-            </span>
-        </a>
-        </div>
+       <h3 class="spending">{{budget.month}}'s spending</h3> 
+
         {% for item in budget.buys.all %}
-       <div>
-        <h1>Company: {{item.name}}</h1>
-        
+    <div class="detail-data">
+        <div class="company">
+        <h6>Company</h6>
+        <br />
+        {{item.name}}
        </div>
-       <div>
-        Item: 
+       <div class="item">
+        <h6>Item</h6>
+        <br />
         {{item.title}}
        </div>
-       <div>Price: 
-        ${{item.price}}
+       <div class="price">
+        <h6>Price</h6> 
+        <br />
+        {{item.price}}
        </div>
-       <div>Date: 
+       <div class="date">
+        <h6>Date</h6> 
+        <br />
         {{item.date}}
+       </div>
+       <a href="{% url 'item_update' budget.pk item.pk %}" class="button is-info">
+           <span class="icon">
+               <i class="edit">
+                <img class='edit' src="https://www.iconsdb.com/icons/preview/purple/edit-xxl.png" alt="">
+               </i>
+           </span>
+       </a>
+    
     </div>
-    <div>
-        <a href="{% url 'item_update' budget.pk item.pk %}" class="button is-info">
-            <span class="icon">
-                <i class="fas fa-edit">Edit</i>
-            </span>
-        </a>
-    </div>
+    <hr />
+    
+    
     {% endfor %}
     </div>
 </div>
