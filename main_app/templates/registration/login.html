@@ -16,29 +16,24 @@
         <div class="home-top">
         <nav class="position-sticky navbar-expand-lg">
             <a class="navbar-brand" href="/">myBudget</a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                
-        <div class="navbar-area">
-                    <a class="navbar-link" href="/about">About</a>
-            
+            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
+                <span class="navbar-area">
+            <a class="about navbar-link " href="/about">About</a>
                 {% if user.is_authenticated %}
                     <a class="navbar-link" href="/budget">List</a>
                     <a class="navbar-link" href="/budget/new">Add a Budget</a>
-                    <!-- <a class="navbar-link" href="/purchases">Add a Purchase</a> -->
                     <span class="navbar-item user" >Welcome: {{user.username}}</span>
                     <span type="button" class="btn btn-dark rounded-pill">
                     <a class="navbar-link" href="{% url 'logout' %}">
                         Logout
                     </a>
                 </span>
-                </div>
+            </span>
             {% else %}
-                <div>
-                    <a href="{% url 'login' %}">Log In</a>
-                    <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
-                </div>
+                    <a class='login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
+                    <a class="signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
             {% endif %}                  
-            </div>
+            </span>
         </nav>
         <h1 class="title-login">Log In</h1>
         {% block content %}
@@ -54,11 +49,10 @@
         <div class="form-group col-4">
             {{ form.password|as_crispy_field }}
             <div class="text-input rounded-pill">
-               
             </div>
         </div>
     </div>
-    <button type="submit" class="btn">Log in</button>
+    <button class='login-button rounded-pill' type="submit" class="btn">Log in</button>
 </form>
 {% endblock %}
 </div>
@@ -67,7 +61,7 @@
       </div>
     </div>
   </body>
-  <footer class="footer">
+  <footer class="login-footer">
     <p class="p-footer">Created by: Joey Caltabellotta</p>
     <p class="p-footer">Contact: joeycalt@yahoo.com</p>
     <p class="p-footer">©2022</p>

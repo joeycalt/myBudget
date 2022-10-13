@@ -341,7 +341,7 @@ button.signup.rounded-pill {
 
 
 .sign-in {
-    
+    padding-bottom: 160px;
 }
 
 .title-login {
@@ -397,4 +397,36 @@ button.signup.rounded-pill {
     text-align: center;
     margin-left: 580px;
     margin-top: 30px;
+}
+
+.login-button.rounded-pill {
+    background-color: #8000FF;
+    width: 110px;
+    border: none;
+    color: white;
+    margin-left: 670px;
+    margin-top: 30px;
+}
+
+.login-footer {
+    background-color: black;
+    color: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+}
+
+.login.navbar-link {
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+.signup.navbar-link {
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+.navbar-area {
+   padding: 0;
 }
