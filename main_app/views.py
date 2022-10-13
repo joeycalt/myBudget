@@ -32,18 +32,6 @@ class Signup(View):
             context = {"form": form}
             return render(request, "registration/signup.html", context)
 
-# class AddPurchase(CreateView):
-#     model = Purchased
-#     fields = ['budget']
-#     template_name = "purchases_done.html"
-#     success_url = '/'
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         return super(BudgetForm, self).form_valid(form)
-    # def get_success_url(self):
-    #     print(self.kwargs)
-    #     return reverse('budget_detail', kwargs={'pk': self.object.pk})  
-
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
     def get_context_data(self, **kwargs):

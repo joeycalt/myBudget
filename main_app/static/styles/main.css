@@ -224,3 +224,166 @@ input.add.rounded-pill {
     height: 30px;
     width: 30px;
 }
+
+.home-titles {
+    text-align: center;
+    margin-top: 200px;
+    padding-bottom: 200px;
+}
+
+.home-company {
+    font-size: 90px;
+    color: #bb7ff7;
+    font-weight: 200;;
+}
+
+.home-top {
+    background: linear-gradient(180deg, #8000FF, #07000E)!important;
+}
+
+.dollars {
+    font-weight: 600;
+}
+
+.home-quote {
+    font-weight: 600;
+    font-size: 80px;
+    color: #8000FF;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.home-quoteTwo {
+    font-weight: 200;
+    font-size: 80px;
+    color: #8000FF;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.tell-more {
+    background-color: #8000FF;
+    margin: 100px 40px 40px 40px;
+    border-radius: 20px;
+    padding: 80px;
+}
+
+.tell-budget {
+    color: black;
+    font-weight: 700;
+}
+
+.tell-more-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+}
+
+.track {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.save {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.budget {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+span.tops {
+    font-weight: 700;
+    margin-bottom: 80px!important;
+}
+
+.sign-me-up {
+    background-color: black;
+    margin: 140px 40px 0 40px;
+    border-radius: 20px;
+    padding: 80px;
+}
+
+.signup {
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+button.signup.rounded-pill {
+    border: none;
+    background-color: white;
+    width: 170px;
+    height: 40px;
+    font-size: 14px;
+    margin-left: 510px;
+    margin-top: 20px;
+}
+
+.signup-home {
+    color: #8000FF;
+    text-align: center;
+}
+
+.signup-home:hover {
+    color: #8000FF;
+}
+
+
+.sign-in {
+    
+}
+
+.title-login {
+    color: white;
+    font-size: 50px;
+    margin-top: 100px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    font-weight: 400;
+}
+
+.about-info {
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 40px;
+    word-spacing: 5px;
+    color: white;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 100px;
+}
+
+.about-welcome {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+
+.about-footer {
+    background-color: black;
+    color: white;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-top: -30px;
+}
