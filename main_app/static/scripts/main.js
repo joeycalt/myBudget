@@ -5,7 +5,7 @@
 //   });
 
   $(".counter").each(function () {
-    var $this = $(this),
+    let $this = $(this),
       countTo = $this.attr("data-countto");
     countDuration = parseInt($this.attr("data-duration"));
     $({ counter: $(this).text()}).animate(
@@ -14,8 +14,9 @@
       },
       {
         duration: countDuration,
+        fpsInterval: '1000',
         step: function () {
-          $this.text(Math.round(this.counter * 100 )/100);
+          $this.text(Math.floor(this.counter * 100 )/100);
         },
         complete: function () {
           $this.text(this.counter);

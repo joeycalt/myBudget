@@ -75,6 +75,7 @@ a.navbar-link {
 
 .home-nav {
     width: 100%;
+    margin-left: 210px;
 }
 
 .base.navbar-area {
@@ -87,8 +88,7 @@ a.navbar-link {
 }
 
 .btn-dark.rounded-pill {
-    margin-left: 40px;
-    margin-right: 20px;
+    
     border: none;
 }
 
@@ -228,6 +228,8 @@ input.add.rounded-pill {
 .spending {
     text-align: left;
     margin-bottom: 70px;
+    font-weight: 700;
+    color: #8000FF;
 }
 
 .detail-data {
@@ -483,6 +485,7 @@ button.signup.rounded-pill {
 li {
     color: red;
     list-style: none;
+    display: none;
 }
 
 #id_password1 {
@@ -516,6 +519,7 @@ li {
     color: #8000FF; 
     font-weight: 700;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 #id_password {
@@ -699,3 +703,7 @@ div.buttons {
      60% { transform: rotate( 0.0deg) } 
     100% { transform: rotate( 0.0deg) }
   }
+
+  #hint_id_username, #hint_id_password2 {
+    display: none;
+}
