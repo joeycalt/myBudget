@@ -662,3 +662,7 @@ div.buttons {
     font-size: 18px;
     font-weight: 800;
 }
+
+.home-off.navbar-brand {
+    margin-right: 1010px;
+}

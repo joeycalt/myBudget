@@ -15,7 +15,7 @@
         <div class="home-top">
         <nav class="poistion-sticky navbar-expand-lg ">
             <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
-        <a class="navbar-brand" href="/">myBudget</a>
+        <a class="home-off navbar-brand" href="/">myBudget</a>
                 
         <span class="navbar-area">
                     <a class="navbar-link" href="/about">About</a>
@@ -23,7 +23,6 @@
                 {% if user.is_authenticated %}
                     <a class="navbar-link" href="/budget">List</a>
                     <a class="navbar-link" href="/budget/new">Add a Budget</a>
-                    <!-- <a class="navbar-link" href="/purchases">Add a Purchase</a> -->
                     <span class="navbar-item user" >Welcome: {{user.username}}</span>
                     <span type="button" class="btn btn-dark rounded-pill">
                     <a class="navbar-link" href="{% url 'logout' %}">
@@ -32,10 +31,8 @@
                 </span>
             </span>
             {% else %}
-                <div>
-                    <a href="{% url 'login' %}">Log In</a>
-                    <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
-                </div>
+            <a class='login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
+            <a class="signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
             {% endif %}                  
             </span>
         </nav>

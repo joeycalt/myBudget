@@ -15,7 +15,7 @@
         <div class="home-top">
         <nav class="position-sticky navbar navbar-expand-lg">
             <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                <a class="navbar-brand" href="/">myBudget</a>
+                <a class="home-off navbar-brand" href="/">myBudget</a>
                 <span class="navbar-area">
                     <a class="navbar-link" href="/about">About</a>
             
@@ -32,10 +32,8 @@
             </span>
             
             {% else %}
-                <div>
-                    <a href="{% url 'login' %}">Log In</a>
-                    <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
-                </div>
+                    <a class='login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
+                    <a class="signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
             {% endif %}                  
             </span>
         </nav>
