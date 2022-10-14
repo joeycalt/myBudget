@@ -89,6 +89,16 @@ class BudgetForm(CreateView):
     def get_success_url(self):
         print(self.kwargs)
         return reverse('budget_list') 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div('amount', css_class='form-inputs'),
+                Div('month', css_class='form-inputs'),
+                css_class='form-row'
+            ),
+        ),
 
 class BudgetCreate(View):
     def post(self, request, pk):
@@ -113,3 +123,15 @@ class BudgetDelete(DeleteView):
     model = Budget
     template_name = "budget_delete.html"
     success_url = "/budget/"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div('name', css_class='update-form'),
+                Div('title', css_class='update-form'),
+                Div('price', css_class='update-form'),
+                Div('date', css_class='update-form'),
+                css_class='form-row'
+            ),
+        ),

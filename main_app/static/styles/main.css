@@ -86,7 +86,6 @@ a.navbar-link {
 .position-sticky.navbar-expand-lg {
     display: inline;
     position: -webkit-sticky;
-    position: sticky;
     top: 0;
     z-index: 1;
 }
@@ -150,6 +149,7 @@ input.search.rounded-pill {
 .detail-amount {
     font-size: 60px;
     color: #8000FF;
+    font-weight: 800;
 }
 
 .detail-spent {
@@ -475,6 +475,7 @@ li {
     background-color: #f2e4ff;
     color: #8000FF;
     font-weight: 700;
+    text-align: center;
 }
 
 #id_password2 {
@@ -485,6 +486,7 @@ li {
     background-color: #f2e4ff;
     color: #8000FF; 
     font-weight: 700;
+    text-align: center;
 }
 
 #id_username {
@@ -495,6 +497,7 @@ li {
     background-color: #f2e4ff;
     color: #8000FF; 
     font-weight: 700;
+    text-align: center;
 }
 
 #id_password {
@@ -505,6 +508,7 @@ li {
     background-color: #f2e4ff;
     color: #8000FF;
     font-weight: 700;
+    text-align: center;
 }
 
 button.signup-button.rounded-pill {
@@ -515,4 +519,146 @@ button.signup-button.rounded-pill {
     margin-left: 620px;
     margin-top: 30px;
     font-size: 30px;
+}
+
+#id_amount {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+}
+
+#id_month {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form.rounded-pill {
+    width: 200px!important;
+    background: #8000FF!important;
+    color: white;
+    border: none;
+    margin-left: 545px;
+}
+
+.form-inputs {
+    text-align: center;
+    margin-top: 70px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.form-title {
+    text-align: center;
+    padding-top: 70px;
+    font-size: 50px;
+    color: #8000FF;
+    font-weight: 600;
+}
+
+.button.is-danger {
+    border-radius: 80px;
+    width: 150px;
+    background: red!important;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+div.buttons {
+    text-align: center;
+    margin-top: 120px;
+    padding-bottom: 250px;
+}
+
+.title.pt-5 {
+    color: black;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#id_name {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+
+#id_title {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+
+#id_price {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+
+#id_date {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+}
+
+.update-form {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.pt-3 {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 50px;
+    color: #8000FF;
+    font-weight: 600;
+}
+
+.edit.rounded-pill {
+    width: 200px!important;
+    background: #8000FF!important;
+    color: white;
+    border: none;
+    margin-left: 545px;
+}
+
+.update-form {
+    font-size: 18px;
+    font-weight: 800;
 }

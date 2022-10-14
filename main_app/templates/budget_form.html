@@ -1,14 +1,20 @@
 {% extends 'base.html' %} 
+{% load crispy_forms_tags %}
 {% block content %}
 <div class="">
     
     <div class="">
-        <h3 class="">Add your budget</h3>
+        <h3 class="form-title">Add your budget</h3>
         <hr />
-        <form method="post">
+        <form class='form-page' method="post">
             {% csrf_token %}
-            {{form.as_p}}
-            <input class= 'detail rounded-pill' type="submit" value="Submit" />
+            <div class="form-inputs">
+            {{ form.amount|as_crispy_field }}
+          </div>
+          <div class="form-inputs">
+            {{ form.month|as_crispy_field }}
+          </div>
+            <input class= 'form rounded-pill' type="submit" value="Submit" />
            
           </form>
 {% endblock %}

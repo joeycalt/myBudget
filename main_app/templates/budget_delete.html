@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load crispy_forms_tags %}
 {% block title%} Delete {{purchased.name}}?{% endblock %}
 {% block content %}
 <h1 class="title pt-5">Are you sure you want to delete your budget of ${{budget.amount}} for the month of {{budget.month}}?</h1>
