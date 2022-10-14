@@ -52,7 +52,6 @@ p {
 
 .navbar {
     background: linear-gradient(180deg, #8000FF, #07000E)!important;
-    padding: 15px;
     font-size: 20px;
 }
 
@@ -64,18 +63,39 @@ a.navbar-link {
     font-size: 20px;
 }
 
+.collapse.navbar-collapse {
+    padding-top: 20px;
+}
+
 .btn-dark.rounded-pill {
     margin-left: 40px;
+    margin-right: 20px;
     border: none;
 }
 
 .navbar-brand {
     color: white;
     font-size: 30px;
+    margin-right: 650px;
 }
 
 .navbar-brand:hover {
     color: white;
+}
+
+.position-sticky.navbar-expand-lg {
+    display: inline;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar.navbar-expand-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 p.card-title {
@@ -357,6 +377,8 @@ button.signup.rounded-pill {
     font-size: 60px;
     color: white;
     font-weight: 400;
+    margin-top: 40px;
+    color: black;
 }
 
 .about-info {
@@ -391,27 +413,30 @@ button.signup.rounded-pill {
 .form-group.col-4 {
     color: white;
     padding: 20px;
+    margin-left: 480px;
 }
 
 .form-row {
     text-align: center;
     margin-left: 580px;
     margin-top: 30px;
+    display: inline;
 }
 
 .login-button.rounded-pill {
     background-color: #8000FF;
-    width: 110px;
+    width: 210px;
     border: none;
     color: white;
-    margin-left: 670px;
+    margin-left: 610px;
     margin-top: 30px;
+    font-size: 30px;
 }
 
 .login-footer {
     background-color: black;
     color: white;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 100px 0;
     text-align: center;
 }
 
@@ -427,6 +452,67 @@ button.signup.rounded-pill {
     color: white;
 }
 
-.navbar-area {
-   padding: 0;
+.login.navbar-brand {
+    color: white;
+    font-size: 30px;
+    margin-right: 1020px;
+}
+
+.form-group {
+    color: white;
+}
+
+li {
+    color: red;
+    list-style: none;
+}
+
+#id_password1 {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+}
+
+#id_password2 {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF; 
+    font-weight: 700;
+}
+
+#id_username {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF; 
+    font-weight: 700;
+}
+
+#id_password {
+    border-radius: 40px;
+    height: 60px;
+    width: 370px;
+    border: none;
+    background-color: #f2e4ff;
+    color: #8000FF;
+    font-weight: 700;
+}
+
+button.signup-button.rounded-pill {
+    background-color: #8000FF;
+    width: 210px;
+    border: none;
+    color: white;
+    margin-left: 620px;
+    margin-top: 30px;
+    font-size: 30px;
 }

@@ -13,11 +13,11 @@
     </head>
     <body>
         <div>
-        <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg">
+            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
             <a class="navbar-brand" href="/">myBudget</a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
                 
-        <div class="navbar-area">
+        <span class="navbar-area">
                     <a class="navbar-link" href="/about">About</a>
             
                 {% if user.is_authenticated %}
@@ -29,14 +29,14 @@
                         Logout
                     </a>
                 </span>
-                </div>
+            </span>
             {% else %}
                 <div>
                     <a href="{% url 'login' %}">Log In</a>
                     <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
                 </div>
             {% endif %}                  
-            </div>
+            </span>
         </nav>
     <div class="container">
 

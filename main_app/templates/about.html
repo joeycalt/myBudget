@@ -14,10 +14,10 @@
     <body>
         <div class="home-top">
         <nav class="poistion-sticky navbar-expand-lg ">
-            <a class="navbar-brand" href="/">myBudget</a>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
+        <a class="navbar-brand" href="/">myBudget</a>
                 
-        <div class="navbar-area">
+        <span class="navbar-area">
                     <a class="navbar-link" href="/about">About</a>
             
                 {% if user.is_authenticated %}
@@ -30,14 +30,14 @@
                         Logout
                     </a>
                 </span>
-                </div>
+            </span>
             {% else %}
                 <div>
                     <a href="{% url 'login' %}">Log In</a>
                     <a class="navbar-link" href="{% url 'signup' %}">Sign Up</a>
                 </div>
             {% endif %}                  
-            </div>
+            </span>
         </nav>
         <h1 class="about-title">About myBudget</h1>
         <hr />

@@ -28,17 +28,6 @@ class Signup(View):
         return render(request, "registration/signup.html", context)
     def post(self, request):
         form = UserCreationForm(request.POST)
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Div(
-                Div('username', css_class='form-group col-4'),
-                Div('password', css_class='form-group col-4'),
-                Div('email_field', css_class='text-input rounded-pill'),
-                css_class='form-row'
-            )
-        )
         if form.is_valid():
             user = form.save()
             login(request, user)
@@ -46,6 +35,18 @@ class Signup(View):
         else:
             context = {"form": form}
             return render(request, "registration/signup.html", 'crispy_forms.html', context)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div('username', css_class='form-group col-4'),
+                Div('password', css_class='form-group col-4'),
+                Div('passsword1', css_class='form-group'),
+                Div('passsword2', css_class='form-group'),
+                css_class='form-row'
+            ),
+        ),
 
 class BudgetList(TemplateView):
     template_name = "budget_list.html"
