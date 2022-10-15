@@ -17,22 +17,22 @@ The user will be anyone who would like to track their purchases or anyone who wo
 ## Screenshots
 
 Homepage:
-https://i.im.ge/2022/10/16/2Lr9AW.Screen-Shot-2022-10-15-at-5-55-05-PM.png
+<img width="1414" alt="Screen Shot 2022-10-15 at 5 55 05 PM" src="https://user-images.githubusercontent.com/102116778/196010846-40127c07-15b5-4425-bdb9-7ad6de552a63.png">
 
 Add Budget:
-https://i.im.ge/2022/10/16/2Lrw2T.Screen-Shot-2022-10-15-at-5-56-51-PM.png
+<img width="1424" alt="Screen Shot 2022-10-15 at 5 56 51 PM" src="https://user-images.githubusercontent.com/102116778/196010854-8a546f04-17f7-4728-835f-860af5ca2b6a.png">
 
 Budget List:
-https://i.im.ge/2022/10/16/2Lr6wc.Screen-Shot-2022-10-15-at-5-57-21-PM.png
+<img width="1435" alt="Screen Shot 2022-10-15 at 5 57 21 PM" src="https://user-images.githubusercontent.com/102116778/196010860-c2863c94-bc60-4b6f-9be9-cd11e431a89e.png">
 
 Add Purchase:
-https://i.im.ge/2022/10/16/2LrNKL.Screen-Shot-2022-10-15-at-5-57-51-PM.png
+<img width="1434" alt="Screen Shot 2022-10-15 at 5 57 51 PM" src="https://user-images.githubusercontent.com/102116778/196010868-130731f9-311b-47e7-8ea9-4aa096367953.png">
 
 Login:
-https://i.im.ge/2022/10/16/2LrtXG.Screen-Shot-2022-10-15-at-5-58-27-PM.png
+<img width="1433" alt="Screen Shot 2022-10-15 at 5 58 27 PM" src="https://user-images.githubusercontent.com/102116778/196010873-7e546bd2-9276-4e62-bab5-4e428c2d5dca.png">
 
 ## Data Models
-https://i.im.ge/2022/10/16/2Lryix.Screen-Shot-2022-10-15-at-5-44-49-PM.png
+<img width="661" alt="Screen Shot 2022-10-15 at 5 44 49 PM" src="https://user-images.githubusercontent.com/102116778/196010879-88fcf675-77e4-455d-854a-1302a78b2362.png">
 
 ## Technologies Used
 
