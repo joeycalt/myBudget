@@ -36,13 +36,13 @@ Login:
 
 ## Technologies Used
 
-Django
-Python
-Bootstrap
-HTML
-CSS
-JavaScript
-PSQL
+- Django
+- Python
+- Bootstrap
+- HTML
+- CSS
+- JavaScript
+- PSQL
 
 ## Some things I enjoyed working on
 
