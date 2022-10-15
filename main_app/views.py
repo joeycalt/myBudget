@@ -26,12 +26,6 @@ class Signup(View):
         form = UserCreationForm()
         context = {"form": form}
         return render(request, "registration/signup.html", context)
-        class Meta:
-            model = User
-            fields = ("username", "email", "password1", "password2")
-            help_texts = {
-                'password1': None
-            }
     def post(self, request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -58,12 +52,12 @@ class BudgetList(TemplateView):
     template_name = "budget_list.html"
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        time = self.request.GET.get("budget")
-        if time != None:
-            context["stores"] = Budget.objects.filter(name__icontains=time)
-            context['header'] = f"Searching through Budget list for {time}"
+        month = self.request.GET.get("month")
+        if month != None:
+            context["stores"] = Budget.objects.filter(month__icontains=month, user=self.request.user)
+            context['header'] = f"Searching through Budget list for the month of {month}"
         else:
-            context["stores"] = Budget.objects.all()
+            context["stores"] = Budget.objects.filter(user=self.request.user)
             context['header'] = 'Budget List'
         return context
 
