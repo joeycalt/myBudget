@@ -14,7 +14,6 @@
       },
       {
         duration: countDuration,
-        fpsInterval: '1000',
         step: function () {
           $this.text(Math.floor(this.counter * 100 )/100);
         },

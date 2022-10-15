@@ -4,9 +4,10 @@
 {% endblock %}
 
 {% block content %}
+<h1 class="list-title">{{user.username}}'s Budget List</h1>
 <form class="mb-5" method="get">
   <div class="field has-addons">
-    <div class="control">
+    <div class="list control">
       <input class="input rounded-pill" type="text" name="month" />
       <input class="search rounded-pill" type="submit" value="Search" />
       <a class="button is-dark" href="{% url 'budget_list' %}">Clear Search</a>
@@ -26,6 +27,7 @@
             <img src="https://i.im.ge/2022/10/13/2OZTgp.Screen-Shot-2022-10-12-at-3-34-02-PM.png" class="card-img-top" alt="">
             <div class="card-body">
           <p class="card-title">Your Budget limit: 
+              <br />
             <span class='card-title-two'>${{store.amount}}</span></p>
           <p class="card-title"> Month: 
             <span class='card-title-two'>{{store.month}}</span></p>
@@ -35,7 +37,7 @@
     </div>
   </a>
   {% empty %}
-    <h1>No locations found matching your query</h1>
-  {% endfor %}
 </div>
+    <h1>No budgets found matching your query</h1>
+  {% endfor %}
 {% endblock %}

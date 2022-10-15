@@ -22,20 +22,30 @@ a {
     color: black;
 }
 
+.list-title {
+    text-align: center;
+    color: #8000FF;
+    font-weight: 700;
+    padding: 40px;
+}
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
     gap: 30px;
 }
 
+.card {
+    height: 270px;
+    width: 270px;
+}
+
 .gallery .card {
-    transition: .1s linear;
+    transition: .3s linear;
 }
 
 .gallery .card:hover {
-    transform: scale(1.1);
-    z-index: 10;
+    transform: scale(1.05);
 }
 
 p {
@@ -56,11 +66,15 @@ p {
 }
 
 a.navbar-link {
-    color: white;
-    margin-right: 15px;
+    color: rgb(239, 239, 239);
     text-decoration: none;
-    padding: 10px;
+    padding: 15px;
     font-size: 20px;
+}
+
+a.navbar-link:hover {
+    color: white;
+    transition: 1s;
 }
 
 .navbar-area {
@@ -88,7 +102,7 @@ a.navbar-link {
 }
 
 .btn-dark.rounded-pill {
-    
+    text-align: center;
     border: none;
 }
 
@@ -152,6 +166,10 @@ input.rounded-pill {
     border: none;
 }
 
+.list.control {
+    text-align: center;
+}
+
 input.search.rounded-pill {
     width: 100px!important;
     background: #8000FF!important;
@@ -194,6 +212,7 @@ input.detail.rounded-pill {
     margin-top: 30px;
     margin-bottom: 30px;
     font-weight: bold;
+    color: #8000FF;
 }
 
 .delete-button {

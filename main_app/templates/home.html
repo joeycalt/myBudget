@@ -19,7 +19,7 @@
                     <img class= 'logo' src="https://i.im.ge/2022/10/14/27JHa8.Group-12.png" alt="">
                 </a>
                 <span class="home-nav">
-                    <a class="navbar-link" href="/about">About</a>
+                    <a class="off-about navbar-link" href="/about">About</a>
             
                 {% if user.is_authenticated %}
                     <a class="navbar-link" href="/budget">List</a>
@@ -34,8 +34,8 @@
             </span>
             
             {% else %}
-                    <a class='login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
-                    <a class="signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
+                    <a class='off login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
+                    <a class="off signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
             {% endif %}                  
             </span>
         </nav>
@@ -43,7 +43,7 @@
             <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="11.67" data-duration="2000"></span> Starbucks</h1>
        
             <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="27.05" data-duration="2000"></span> Nike</h1>
-            <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="83.21" data-duration="2000"></span> Amazon</h1>
+            <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="23.21" data-duration="2000"></span> Amazon</h1>
         </div>
     </div>
     <div>
