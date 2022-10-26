@@ -732,4 +732,8 @@ div.buttons {
         font-size: 10px!important;
         display: block;
     }
+
+    .home-company {
+        font-size: 40px;
+    }
 }
