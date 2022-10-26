@@ -728,9 +728,24 @@ div.buttons {
 }
 
 @media only screen and (min-width: 390px) {
+    body {
+        overflow: auto;
+    }
+
     .navbar-expand-lg .navbar-collapse {
         font-size: 10px!important;
         display: block;
+    }
+    
+    a.navbar-link, .navbar-item.user {
+        font-size: 15px;
+        display: block;
+        padding: 0px;
+        text-align: center;
+    }
+
+    .btn-dark.rounded-pill {
+        float: right;
     }
 
     .home-company, .home-quote, .home-quoteTwo {
