@@ -9,25 +9,29 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
         <script src="{% static 'scripts/main.js' %}" defer></script>
-        <title>myBudget - {% block title %}{% endblock %}</title> 
+        <title>myBudget {% block title %}{% endblock %}</title> 
     </head>
     <body>
         <div>
         <nav class="navbar navbar-expand-lg">
-            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                <a class="container-fluid justify-content-start navbar-brand" href="/">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i
+        class="fas fa-bars fa-1x"></i></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+            <span class="navbar-collapse justify-content-end navbar-nav mr-auto" id="navbarMain">
+                <a class="container-fluid justify-content-start navbar-brand nav-item active" href="/">
                     <img class= 'logo' src="https://i.im.ge/2022/10/14/27JHa8.Group-12.png" alt="">
                 </a>
                 
         <span class="base navbar-area">
-                    <a class="navbar-link" href="/about">About</a>
+                    <a class="navbar-link nav-item" href="/about">About</a>
             
                 {% if user.is_authenticated %}
-                    <a class="navbar-link" href="/budget">List</a>
-                    <a class="navbar-link" href="/budget/new">Add a Budget</a>
+                    <a class="navbar-link nav-item" href="/budget">List</a>
+                    <a class="navbar-link nav-item" href="/budget/new">Add a Budget</a>
                     <span class="navbar-item user" >Welcome: {{user.username}}</span>
                     <span type="button" class="btn btn-dark rounded-pill">
-                    <a class="navbar-link" href="{% url 'logout' %}">
+                    <a class="navbar-link nav-item" href="{% url 'logout' %}">
                         Logout
                     </a>
                 </span>
@@ -39,6 +43,7 @@
                 
             {% endif %}                  
             </span>
+            </div>
         </nav>
     <div class="container">
 
