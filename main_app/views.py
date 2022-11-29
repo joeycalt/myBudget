@@ -117,7 +117,13 @@ class ItemUpdate(UpdateView):
     template_name = "item_update.html"
     def get_success_url(self):
         return reverse('budget_detail', kwargs={'pk': self.kwargs['budget_pk']})
-    
+
+class ItemDelete(DeleteView):
+     model = Item
+     template_name = "item_delete.html"
+     success_url = "/budget/"
+     def get_success_url(self):
+        return reverse('budget_detail', kwargs={'pk': self.kwargs['item_pk']},)
 
 class BudgetDelete(DeleteView):
     model = Budget
