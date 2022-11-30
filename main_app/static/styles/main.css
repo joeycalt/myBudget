@@ -968,4 +968,69 @@ div.buttons {
         border-top: 4px solid;
         opacity: .25;
     }
+
+    .pt-3 {
+        text-align: center;
+        margin-top: 60px;
+        font-size: 22px;
+        color: #8000FF;
+        font-weight: 600;
+    }
+
+    #id_name {
+        border-radius: 40px;
+        height: 45px;
+        width: 300px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    #id_title {
+        border-radius: 40px;
+        height: 45px;
+        width: 300px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    #id_date {
+        border-radius: 40px;
+        height: 45px;
+        width: 300px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    #id_price {
+        border-radius: 40px;
+        height: 45px;
+        width: 300px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .edit.rounded-pill {
+        width: 150px!important;
+        height: 40px!important;
+        background: #8000FF!important;
+        color: white;
+        border: none;
+        margin-left: 108px;
+    }
 }
