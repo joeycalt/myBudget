@@ -876,4 +876,43 @@ div.buttons {
         grid-template-columns: repeat(1, 1fr);
         margin-left: 80px;
     }
+
+    #id_amount {
+        border-radius: 40px;
+        height: 50px;
+        width: 270px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #id_month {
+        border-radius: 40px;
+        height: 50px;
+        width: 270px;
+        border: none;
+        background-color: #f2e4ff;
+        color: #8000FF;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    input.form.rounded-pill {
+        width: 160px!important;
+        height: 40px!important;
+        background: #8000FF!important;
+        color: white;
+        border: none;
+        margin-left: 100px;
+    }
+
+    .form-title {
+        text-align: center;
+        padding-top: 70px;
+        font-size: 40px;
+        color: #8000FF;
+        font-weight: 600;
+    }
 }
