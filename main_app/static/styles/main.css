@@ -1033,4 +1033,21 @@ div.buttons {
         border: none;
         margin-left: 108px;
     }
+
+    .title.pt-5 {
+        color: black;
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .button.is-danger {
+        border-radius: 80px;
+        width: 110px;
+        background: red!important;
+        color: white;
+        border: none;
+        font-size: 18px;
+    }
 }
