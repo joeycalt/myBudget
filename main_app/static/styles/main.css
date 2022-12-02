@@ -1152,6 +1152,11 @@ div.buttons {
         width: 100%;
         margin-left: 675px!important;
     }
+
+    .base.navbar-area {
+        width: 88%;
+        margin-left: 580px!important;
+    }
 }
 
 
