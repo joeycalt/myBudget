@@ -254,7 +254,7 @@ input.add.rounded-pill {
 
 .detail-data {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     text-align: left;
 }
@@ -590,7 +590,7 @@ button.signup-button.rounded-pill {
     background: #8000FF!important;
     color: white;
     border: none;
-    margin-left: 545px;
+    margin-left: 455px;
 }
 
 .form-inputs {
@@ -697,7 +697,7 @@ div.buttons {
     background: #8000FF!important;
     color: white;
     border: none;
-    margin-left: 545px;
+    margin-left: 455px;
 }
 
 .update-form {
@@ -1147,20 +1147,4 @@ div.buttons {
     }
 }
 
-@media only screen and (min-width: 844px) {
-    .animated-icon1 {
-        width: 30px;
-        height: 20px;
-        position: relative;
-        margin: 0px;
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-        -webkit-transition: .5s ease-in-out;
-        -moz-transition: .5s ease-in-out;
-        -o-transition: .5s ease-in-out;
-        transition: .5s ease-in-out;
-        cursor: pointer;
-      }
-}
+
