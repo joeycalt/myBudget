@@ -794,6 +794,26 @@ div.buttons {
 }
 
 @media only screen and (max-width: 844px) {
+    button.signup.rounded-pill {
+        border: none;
+        background-color: white;
+        width: 170px;
+        height: 40px;
+        font-size: 14px;
+        margin-top: 20px;
+        margin-left: -10px!important;
+    }
+
+    button.signup-button.rounded-pill {
+        background-color: #8000FF;
+        width: 210px;
+        border: none;
+        color: white;
+        margin-left: 90px!important;
+        margin-top: 30px;
+        font-size: 20px!important;
+    }
+    
     .about-title {
         text-align: center;
         font-size: 40px;
@@ -1192,6 +1212,28 @@ div.buttons {
         font-size: 14px;
         margin-left: 755px;
         margin-top: 20px;
+    }
+
+    .edit {
+        height: 30px;
+        width: 30px;
+        color: #8000FF
+    }
+
+    .trash {
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    span.home-nav {
+        width: 100%;
+        margin-left: 280px!important;
+    }
+
+    .base.navbar-area {
+        width: 100%;
+        margin-left: 280px!important;
     }
 }
 
