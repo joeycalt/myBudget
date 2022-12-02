@@ -1147,4 +1147,11 @@ div.buttons {
     }
 }
 
+@media only screen and (max-width: 2100px) {
+    span.home-nav {
+        width: 100%;
+        margin-left: 675px!important;
+    }
+}
+
 
