@@ -1157,6 +1157,42 @@ div.buttons {
         width: 88%;
         margin-left: 580px!important;
     }
+
+    button.signup-button.rounded-pill {
+        background-color: #8000FF;
+        width: 210px;
+        border: none;
+        color: white;
+        margin-left: 855px;
+        margin-top: 30px;
+        font-size: 30px;
+    }
+
+    .form-group.col-4 {
+        color: white;
+        padding: 20px;
+        margin-left: 650px;
+    }
+
+    .login-button.rounded-pill {
+        background-color: #8000FF;
+        width: 210px;
+        border: none;
+        color: white;
+        margin-left: 865px;
+        margin-top: 30px;
+        font-size: 30px;
+    }
+
+    button.signup.rounded-pill {
+        border: none;
+        background-color: white;
+        width: 170px;
+        height: 40px;
+        font-size: 14px;
+        margin-left: 755px;
+        margin-top: 20px;
+    }
 }
 
 
