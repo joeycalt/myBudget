@@ -906,12 +906,12 @@ div.buttons {
         margin-bottom: 15px;
     }
 
-    .login-button.rounded-pill {
+    .login-button.rounded-pill.login {
         background-color: #8000FF;
         width: 170px;
         border: none;
         color: white;
-        margin-left: 108px;
+        margin-left: 111px;
         margin-top: 30px;
         font-size: 23px;
     }
@@ -1164,6 +1164,10 @@ div.buttons {
         color: white;
         border: none;
         font-size: 18px;
+    }
+
+    .form-group.col-4.login {
+        margin-left: 130px;
     }
 }
 
