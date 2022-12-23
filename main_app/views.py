@@ -34,7 +34,7 @@ class Signup(View):
             return redirect("budget_form")
         else:
             context = {"form": form}
-            return render(request, "registration/signup.html", 'crispy_forms.html', context)
+            return render(request, "registration/signup.html", 'crispy_forms.html', {"form": form})
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
