@@ -1,88 +1,101 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
-        <script src="{% static 'scripts/main.js' %}" defer></script>
-        <title>myBudget - {% block title %}{% endblock %}</title> 
-    </head>
-    <body>
-        <div class="home-top">
-        <nav class="position-sticky navbar navbar-expand-lg">
-            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                <a class="container-fluid justify-content-start navbar-brand" href="/">
-                    <img class= 'logo' src="https://i.im.ge/2022/10/14/27JHa8.Group-12.png" alt="">
-                </a>
-                <span class="home-nav">
-                    <a class="off-about navbar-link" href="/about">About</a>
-            
-                {% if user.is_authenticated %}
-                    <a class="navbar-link" href="/budget">List</a>
-                    <a class="navbar-link" href="/budget/new">Add a Budget</a>
-                    <span class="navbar-item user" >Welcome: {{user.username}}</span>
-                    <span type="button" class="btn btn-dark rounded-pill">
-                    <a class="navbar-link" href="{% url 'logout' %}">
-                        Logout
-                    </a>
-                </span>
-            </span>
-            
-            {% else %}
-                    <a class='off login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
-                    <a class="off signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
-            {% endif %}                  
-            </span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myBudget - {% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <script src="{% static 'scripts/main.js' %}" defer></script>
+</head>
+<body>
+    <header class="position-sticky top-0 bg-light">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarMain"
+        aria-controls="navbarMain"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+          myBudget
+      </a>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="/budget">Budgets</a></li>
+                      {% endif %}
+                      <li class="nav-item"><a class="nav-link" href="/about">How it works</a></li>
+                    </ul>
+                    {% if not user.is_authenticated %}
+                      <a class="btn sign-in-btn ms-3" href="{% url 'login' %}">Sign in</a>
+                    {% else %}
+                      <div class="user-info ms-3">
+                        <a class="btn logout-btn" href="{% url 'logout' %}">Logout</a>
+                      </div>
+                    {% endif %}
+                  </div>
+            </div>
         </nav>
-        <div class="home-titles">
-            <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="11.67" data-duration="2000"></span> Starbucks</h1>
-       
-            <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="27.05" data-duration="2000"></span> Nike</h1>
-            <h1 class="home-company"><span class= 'dollars'>$</span><span class="dollars counter" data-countto="23.21" data-duration="2000"></span> Amazon</h1>
+    </header>
+    <main class="container">
+        <section class="home-titles text-center">
+            <h1 class="home-company"><span class="dollars">$</span><span class="dollars counter" data-countto="11.67" data-duration="2000"></span> <span>Starbucks</span></h1>
+            <h1 class="home-company"><span class="dollars">$</span><span class="dollars counter" data-countto="27.05" data-duration="2000"></span> <span>Nike</span></h1>
+            <h1 class="home-company"><span class="dollars">$</span><span class="dollars counter" data-countto="23.21" data-duration="2000"></span> <span>Amazon</span></h1>
+            <section class="text-center">
+                <p class="home-quote">It adds up.</p>
+                <p class="home-quoteTwo">Say <span class="wave">👋</span> to myBudget</p>
+            </section>
+        </section>
+        <section class="tell-more rounded">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <p class="track">
+                        <span class="emoji-circle">🤑</span>
+                        <span class="tops">Budget Smarter</span><br>Set up personalized budgets tailored to your lifestyle and financial goals. Whether it’s daily expenses, monthly bills, or long-term plans, stay on top of your spending effortlessly. Simply add the amount and we’ll do the rest.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="save">
+                        <span class="emoji-circle">🛟</span>
+                        <span class="tops">Save More</span><br>Whether you're building an emergency fund, saving for a dream vacation, or planning for a big purchase, myBudget helps you stay motivated and on track with automated savings suggestions and reminders.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="budget">
+                        <span class="emoji-circle">🕵️</span>
+                        <span class="tops">Track Every Dollar</span><br>With myBudget, tracking your expenses has never been easier. Get a real-time overview of where your money is going with detailed expense tracking and receive insights to make informed financial decisions.</p>
+                </div>
+            </div>
+        </section>
+        <section class="button-padding">
+        <a href="{% url 'signup' %}">
+        <div class="button-section text-center">
+            <span class="default-text">Get Started Today</span>
+            <span class="text-change">🥳</span>
         </div>
-    </div>
-    <div>
-        <p class="home-quote">It adds up.</p>
-        <p class="home-quoteTwo">Say <span class="wave">👋</span> to myBudget</p>
-    </div>
-    <div class="tell-more">
-        <span>
-        <span class="tell-more-list">
-            <p class="track"><span class="tops">Track</span>
-            <br /> Seem to be spending your money and wondering what and where you spent it on? Well at <span class="tell-budget">myBudget</span> you'll be able to track every purchase made and be able to revisit if you ever wonder again!
-            </p>
-            <p class="save"><span class="tops">Save</span>
-                <br /> Studies have shown people who budget themselves per month, actually helps you save money in the end. At <span class="tell-budget">myBudget</span> you will be able to do just that! It will make you seem wealthy towards friends and family as well😏
-            </p>
-            <p class="budget"><span class="tops">Budget</span>
-                <br /> At <span class="tell-budget">myBudget</span> it will be the easiest and best way to budget yourself. Just add your purchase in the input field and it will show immeadiately. Each purchase will be tracked as well in comparison to the budget you will be able to set for yourself each month!
-            </p>
-        </span>
-    </span>
-    </div>
-    <div class="sign-me-up">
-        <span>
-            <p class="signup">Sign me up!</p>
-            <button class="signup rounded-pill">
-                <a class="signup-home" href="{% url 'signup' %}">Create an account</a>
-            </button>
-        </span>
-    </div>
-    <div class="container">
+    </a>
+</section>
+        {% block content %}{% endblock %}
+    </main>
 
-            {% block content %}{% endblock %}
-
+    <footer class="footer text-white">
+        <div class="left-content">
+            <p class="fs-5">Questions?</p>
+            <p class="fs-5">Contact us at support@mybudget.com</p>
         </div>
-      </div>
-    </div>
-  </body>
-  <footer class="footer">
-    <p class="p-footer">Created by: Joey Caltabellotta</p>
-    <p class="p-footer">Contact: joeycalt@yahoo.com</p>
-    <p class="p-footer">©2022</p>
-</footer>
+        <div class="right-content">
+            <p class="fs-5 how-it-works"><a class="nav-link" href="/about">How it works</a></p>
+            <p class="fs-5">©️2025 myBudget is a fictitious app created by Joey Caltabellotta</p>
+        </div>
+    </footer>
+</body>
 </html>

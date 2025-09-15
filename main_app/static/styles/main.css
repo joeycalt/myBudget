@@ -1,21 +1,483 @@
-body {
-    background-color: white;
-    color: black;
-    min-height: 100vh;
+body, h1, h2, h3, h4, h5, h6, p, a, button, input, select, textarea, th, td, .modal-content, .btn, .navbar, .form-control {
+    font-family: 'Instrument Sans', sans-serif !important;
 }
 
-h1,
-h2,
-h3 {
+
+body {
+    background-color: #8000ff;
     color: black;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 h6 {
     font-weight: 600;
+    font-size: 36px;
 }
+
 
 a {
     text-decoration: none;
+}
+
+.container {
+    flex: 1;
+}
+
+.dropdown-menu {
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.dropdown-item {
+    font-size: 18px;
+    width: 200px;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+    color: #9933ff; /* Darker on hover */
+}
+
+.list-container {
+    margin-left: 60px;
+    margin-right: 60px;
+    width: 1320px;
+    margin-top: 18px;
+}
+
+.clickable-row {
+    cursor: pointer;
+    height: 60px;
+}
+
+.empty-current-budget {
+    font-size: 31px;
+    font-weight: 700;
+    display: flex; /* Make the h2 a flex container */
+    justify-content: space-between; /* Pushes children apart */
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 30px;
+    margin: 0px;
+}
+
+.empty-state {
+    text-align: center;
+}
+
+.empty-emoji {
+    font-size: 31px;
+}
+
+.empty-sub {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.empty-sub-2 {
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 26px;
+}
+
+.empty-btn {
+        padding-top: 28px 29px 28px 29px;
+        background-color: #8ACB88;
+        color: black;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 197px;
+        height: 46px;
+        font-size: 16px;
+        font-weight: 500;
+}
+
+.empty-list-top {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.table-bg {
+    background-color: white; /* Light gray background for contrast */
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px; 
+    height: 470px;
+}
+
+.table-head {
+    font-weight: 700;
+    font-size: 31px;
+}
+
+.table-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 16px;
+}
+
+.view-btn {
+    color: white;
+    background: black;
+    border-radius: 10px;
+    width: 197px;
+    height: 46px;
+    font-size: 16px;
+    margin-left: 500px;
+}
+
+.view-btn:hover {
+    color: black;
+    background: white;
+    border-radius: 10px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Gray overlay */
+    z-index: 1000;
+  }
+  
+.delete-sub {
+    text-align: center;
+    font-size: 14px;
+}
+
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 637px;
+    height: 539px;
+  }
+
+  .delete-modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 430px;
+    height: 200px;
+  }
+
+  .modal-content-new-budget {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 637px;
+    height: 300px;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+  }
+
+.new-btn {
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+}
+
+.new-btn:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.table-btn {
+    background-color: #8ACB88;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 197px;
+    height: 46px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.new-expense-title {
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 6px;
+}
+
+.new-expense-sub {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 32px;
+}
+
+.already {
+    padding-top: 34px;
+    padding-left: 132px;
+    margin: 0px;
+}
+
+#description {
+    width: 573px;
+    height: 50px;
+}
+
+.modal-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.edit-title {
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 6px;
+}
+
+.edit-sub {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 32px;
+}
+
+.delete-modal-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding-top: 15px;
+}
+
+.expense-modal-btn {
+    padding-top: 28px 29px 28px 29px;
+    background-color: #8ACB88;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 197px;
+    height: 46px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.delete-modal-btn {
+    padding-top: 28px 29px 28px 29px;
+    background-color: #8ACB88;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 197px;
+    height: 46px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.modal-btn-div {
+    margin-top: 32px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.close-cancel {
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-cancel-div {
+    margin-top: 32px;
+    text-align: left;
+}
+
+.h4-exp {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
+
+.new-expense-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.new-budget-input {
+    width: 278px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 16px;
+}
+
+.new-budget-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.expense-input {
+    width: 278px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 16px;
+}
+
+.edit-input {
+    width: 278px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 16px;
+}
+
+.amount-btns {
+    -webkit-appearance: none;
+}
+
+.amount-btns::-webkit-inner-spin-button,
+.amount-btns::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.top-input {
+    padding-bottom: 8px;
+}
+
+.image {
+    position: absolute; /* Take image out of normal flow */
+    right: 0; /* Stick to the right side */
+    top: 0; /* Stick to the top */
+    bottom: 0; /* Stretch to bottom of container */
+    width: 40%; 
+    height: 100%;
+    padding: 28px 52px 28px 0px;
+}
+
+.current-month {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.current-budget {
+    font-size: 31px;
+    font-weight: 700;
+    display: flex; /* Make the h2 a flex container */
+    justify-content: space-between; /* Pushes children apart */
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 30px;
+    margin: 0px;
+}
+
+.expense-btn {
+    padding-top: 28px 29px 28px 29px;
+    background-color: #8ACB88;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+    width: 197px;
+    height: 46px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.expense-btn-in {
+    color: black;
+}
+
+.expense-btn-in:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.current-remain {
+    font-size: 15px;
+    font-weight: 400;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.current-total {
+    font-size: 15px;
+    font-weight: 400;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.current-days {
+    font-size: 15px;
+    font-weight: 400;
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.current-remain-2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.current-total-2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.current-days-2 {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.current-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    width: 800px;
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 47px;
+}
+
+.image img {
+    display: block;
+    width: 100%; /* Fill image container */
+    height: 100%; 
+}
+
+.already-signin {
+    text-decoration: underline;
+    font-weight: 700;
+    color: black;
+}
+
+ {
+    display: none;
+}
+
+.container-fluid {
+    padding-left: 62px;
+    padding-top: 31px;
+    padding-right: 60px;
+    padding-bottom: 10px;
 }
 
 .title {
@@ -29,44 +491,70 @@ a {
     padding: 40px;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 30px;
+.table-wrapper {
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto; /* Scrollable body */
+    position: relative; /* Optional: matches table-bg */
+    width: 1255px;
 }
 
-.card {
-    height: 270px;
-    width: 270px;
+.table { 
+    background-color: white;
+    color: black;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+} 
+
+thead {
+    background-color: #F5F5F5;
+    border-radius: 10px;
 }
 
-.gallery .card {
-    transition: .3s linear;
+.table th {
+    background-color: #F5F5F5;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #f2e4ff;
+    position: sticky; /* Keeps header fixed while scrolling */
+    top: 0; /* Sticks to top of .table-wrapper */
+    z-index: 2; /* Light purple border */
+    border-radius: 10px;
 }
 
-.gallery .card:hover {
-    transform: scale(1.05);
+.table td {
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid #f2e4ff;
 }
 
-p {
-    font-size: 12px;
+.table .table-row :hover {
+    background-color: #F0EBFD;
+}
+
+.control-label {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 8px;
 }
 
 .navbar-item.user {
     color: white;
+    font-size: 20px;
 }
 
 .detail_add {
     padding: 10px;
 }
 
-.navbar {
-    background: linear-gradient(180deg, #8000FF, #07000E)!important;
-    font-size: 20px;
-}
 
 a.navbar-link {
-    color: rgb(239, 239, 239);
+    color: white;
     text-decoration: none;
     padding: 15px;
     font-size: 20px;
@@ -82,23 +570,9 @@ a.navbar-link:hover {
     margin-left: 40px;
 }
 
-.logo {
-    width: 170px;
-    height: 60px;
-}
-
-.home-nav {
-    width: 100%;
-    margin-left: 210px;
-}
-
-.base.navbar-area {
-    width: 88%;
-    margin-left: 40px;
-}
-
 .collapse.navbar-collapse {
-    padding-top: 20px;
+    background: white;
+    border-radius: 10px;
 }
 
 .btn-dark.rounded-pill {
@@ -106,13 +580,57 @@ a.navbar-link:hover {
     border: none;
 }
 
-.navbar-brand {
-    color: white;
-    font-size: 30px;
+ul {
 }
 
-.navbar-brand:hover {
+.navbar-brand {
+    color: black;
+    font-size: 28px;
+    background: white;
+    padding-top: 26px;
+    padding-left: 22px;
+    padding-bottom: 22px;
+    border-radius: 10px;
+    height: 78px;
+    display: flex; /* Use flex for better alignment */
+    align-items: center;
+}
+
+.sign-in-btn, .logout-btn {
+    background-color: #000000; /* Black background */
+    color: #ffffff;
+    width: 200px;
+    height: 78px;
+    margin-left: 24px; /* Space from other nav items */
+    padding: 22px 71px 22px 71px; /* Adjust padding to match or differ from other links */
+    border-radius: 10px; /* Rounded corners for button look */
+    font-size: 18px;
+    display: flex; /* Use flex for better alignment */
+    align-items: center;
+}
+
+.logout-btn {
+    padding: 22px 50px 22px 50px;
+}
+
+.sign-in-btn:hover, .logout-btn:hover {
+   color: black;
+   background-color: white;
+}
+
+.about-ul {
+    display: contents;
     color: white;
+}
+
+.about-li {
+    color: white;
+}
+
+.user-name {
+    color: white; /* Black text color */
+    display: inline-block;
+    margin-right: 10px; /* Space between username and logout */
 }
 
 .position-sticky.navbar-expand-lg {
@@ -127,48 +645,61 @@ a.navbar-link:hover {
     position: sticky;
     top: 0;
     z-index: 1;
+    background: #8000ff!important;
+    padding: 0px;
 }
 
-p.card-title {
-    font-size: 20px;
-    font-weight: bolder;
-    color: #8000FF!important;
-    text-decoration: none!important;
-    text-align: center;
+.counter {
+    display: inline-block;
 }
 
-.card-title-two {
-    color: black;
-    font-weight: 400;
+
+.company-name {
+    margin-left: 0.5em; /* Space between number and company name */
+    white-space: nowrap; /* Prevent company name from wrapping */
 }
 
 .footer {
     background-color: black;
     color: white;
-    padding: 10px 0 10px 0;
-    margin-top: 200px;
-    text-align: center;
+    margin: 34px 62px 34px 62px;
+    width: 1318px;
+    height: 121px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* This will push elements to opposite ends */
+    align-items: center;
 }
 
-.p-footer {
-    font-size: 15px;
+.left-content {
+    margin: 25px 0px 25px 26px;
 }
 
-input.rounded-pill {
-    height: 50px!important;
-    width: 400px!important;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 70px;
-    background-color: #f2e4ff;
-    color: #8000FF;
-    font-weight: bold;
-    border: none;
-    text-align: center;
+.right-content {
+    margin: 25px 26px 25px 0px;
+}
+
+.how-it-works {
+    text-align: right;
+    text-decoration: underline;
+}
+
+.login-full {
+    background-color: white;
+    margin: 40px 60px 192px 60px;
+    border-radius: 10px;
+}
+
+input.search-bar {
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
 .list.control {
-    text-align: center;
+    text-align: left;
+    padding-bottom: 16px;
 }
 
 input.search.rounded-pill {
@@ -185,7 +716,7 @@ input.search.rounded-pill {
 
 .detail-amount {
     font-size: 60px;
-    color: #8000FF;
+    color: white;
     font-weight: 800;
 }
 
@@ -210,10 +741,45 @@ input.detail.rounded-pill {
 }
 
 .purchase-title {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #8000FF;
+    color: white;
+}
+
+.delete-btn {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 87px;
+    height: 40px;
+    padding: 6px 8px;
+}
+
+.edit-btn {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 71px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.edit-btn:hover, .delete-btn:hover, .delete-btn-budget:hover {
+    background-color: black!important;
+    color: white!important;
+}
+
+.delete-btn-budget {
+    background: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    width: 87px;
+    height: 40px;
+    padding: 6px 8px;
 }
 
 .delete-button {
@@ -231,6 +797,7 @@ input.add.rounded-pill {
     background-color: #8000FF;
     color: white;
     border: none;
+    margin: 40px 0px 40px 0px;
 }
 
 .company.detail.rounded-pill {
@@ -247,9 +814,10 @@ input.add.rounded-pill {
 
 .spending {
     text-align: left;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     font-weight: 700;
-    color: #8000FF;
+    color: white;
+    font-size: 40px;
 }
 
 .detail-data {
@@ -257,6 +825,7 @@ input.add.rounded-pill {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     text-align: left;
+    
 }
 
 .button.is-info {
@@ -264,8 +833,9 @@ input.add.rounded-pill {
     text-align: center;
 }
 
-.company {
+.company, .item, .price, .date {
     font-weight: 200;
+    font-size: 22px;
 }
 
 .price {
@@ -285,20 +855,8 @@ input.add.rounded-pill {
     width: 30px;
 }
 
-.home-titles {
-    text-align: center;
-    margin-top: 200px;
-    padding-bottom: 200px;
-}
-
-.home-company {
-    font-size: 90px;
-    color: #bb7ff7;
-    font-weight: 200;;
-}
-
 .home-top {
-    background: linear-gradient(180deg, #8000FF, #07000E)!important;
+    background: #8000ff;
 }
 
 .dollars {
@@ -307,25 +865,17 @@ input.add.rounded-pill {
 
 .home-quote {
     font-weight: 600;
-    font-size: 80px;
-    color: #8000FF;
+    font-size: 2rem;
+    color: white;
     text-align: center;
-    margin-top: 150px;
+    margin-top: 80px;
 }
 
 .home-quoteTwo {
     font-weight: 200;
-    font-size: 80px;
-    color: #8000FF;
+    font-size: 2rem;
+    color: white;
     text-align: center;
-    margin-bottom: 150px;
-}
-
-.tell-more {
-    background-color: #8000FF;
-    margin: 100px 40px 40px 40px;
-    border-radius: 20px;
-    padding: 80px;
 }
 
 .tell-budget {
@@ -345,6 +895,30 @@ input.add.rounded-pill {
     color: white;
     font-size: 20px;
     font-weight: 200;
+    position: relative;
+}
+
+.emoji-circle-container {
+    position: absolute;
+    top: -25px; /* Half the size of the circle */
+    left: 0; /* Position from left, adjust as needed */
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    overflow: hidden; /* This will cut off half the circle */
+}
+
+.emoji-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #8ACB88;
+    position: absolute;
+    top: -25px;
+    left: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Size of the emoji */
 }
 
 .save {
@@ -363,121 +937,295 @@ input.add.rounded-pill {
 
 span.tops {
     font-weight: 700;
-    margin-bottom: 80px!important;
+    font-size: 20px;
 }
 
-.sign-me-up {
-    background-color: black;
-    margin: 140px 40px 0 40px;
-    border-radius: 20px;
-    padding: 80px;
-}
-
-.signup {
-    text-align: center;
-    color: white;
-    font-weight: 600;
-    font-size: 40px;
-}
-
-button.signup.rounded-pill {
-    border: none;
-    background-color: white;
-    width: 170px;
-    height: 40px;
-    font-size: 14px;
-    margin-left: 510px;
-    margin-top: 20px;
-}
-
-.signup-home {
-    color: #8000FF;
-    text-align: center;
-}
-
-.signup-home:hover {
-    color: #8000FF;
-}
-
-
-.sign-in {
-    padding-bottom: 160px;
-}
-
-.title-login {
-    color: white;
-    font-size: 50px;
-    margin-top: 100px;
+.button-section {
+    background-color: #8ACB88;
+    height: 78px;
+    width: 1309px;
+    padding: 28px 0px 28px 0px;
+    font-size: 18px;
     font-weight: 500;
-    text-align: center;
-}
-
-.about-title {
-    text-align: center;
-    font-size: 60px;
-    color: white;
-    font-weight: 400;
-    margin-top: 40px;
+    border-radius: 10px;
+    position: relative; /* Necessary for absolute positioning of children */
+    display: inline-block; /* To make sure it respects its parent's width */
+    text-align: center; /* Centers text within the container */
     color: black;
 }
 
+.button-section:hover {
+    background-color: white;
+}
+
+.default-text, .text-change {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensures text doesn't get cut off if it's longer */
+    text-align: center;
+}
+
+.default-text {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.text-change {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.button-section:hover .default-text {
+    opacity: 0;
+}
+
+.button-section:hover .text-change {
+    opacity: 1;
+}
+
+.button-padding {
+    padding-top: 34px;
+    padding-bottom: 34px;
+}
+
+.sign-in {
+    flex: 1;
+}
+
+.budget-tracker {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.total-spent {
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+}
+
+#spent-counter {
+    color: #f2e4ff; /* Light purple from your inputs */
+}
+
+.budget-warning {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.about-page {
+    display: flex;
+    flex-columns: 2fr;
+}
+
 .about-info {
-    font-size: 30px;
-    font-weight: 200;
-    line-height: 40px;
-    word-spacing: 5px;
-    color: white;
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-bottom: 100px;
+    margin-left: 119px;
+    margin-top: 92px;
+    margin-right: 116px;
 }
 
-.about-welcome {
-    text-align: center;
-    font-size: 40px;
+.about1 {
+    width: 524px;
+    font-size: 42px;
+    font-weight: 700;
     color: white;
+    margin-bottom: 18px;
+}
+
+.about2 {
+    width: 440px;
+    font-size: 15px;
     font-weight: 400;
-    margin-top: 90px;
-    margin-bottom: 30px;
+    color: white;
+    margin-bottom: 18px;
 }
 
-.about-footer {
-    background-color: black;
+.about3 {
+    width: 440px;
+    font-size: 15px;
+    font-weight: 400;
     color: white;
-    padding: 10px 0 10px 0;
+}
+
+.about-boxes {
+    margin-top: 150px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.about-bottom {
+    color: white;
+    width: 602px;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: 92px;
+    margin-bottom: 68px;
+}
+
+.about-btn1 {
+    background-color: #8ACB88;
+    height: 78px;
+    width: 415px;
+    padding: 28px 0px 28px 0px;
+    margin-top: 48px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    position: relative; /* Necessary for absolute positioning of children */
+    display: inline-block; /* To make sure it respects its parent's width */
+    text-align: center; /* Centers text within the container */
+    color: black;
+}
+
+.about-btn1:hover {
+    background-color: white;
+}
+
+.default-text, .text-change {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensures text doesn't get cut off if it's longer */
     text-align: center;
-    margin-top: -30px;
+}
+
+.default-text {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.text-change {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-btn1:hover .default-text {
+    opacity: 0;
+}
+
+.about-btn1:hover .text-change {
+    opacity: 1;
+}
+
+.about-btn2 {
+    background-color: #8ACB88;
+    height: 78px;
+    width: 415px;
+    padding: 28px 0px 28px 0px;
+    margin-top: 104px;
+    margin-right: 69px;
+    margin-left: 235px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 10px;
+    position: relative; /* Necessary for absolute positioning of children */
+    display: inline-block; /* To make sure it respects its parent's width */
+    text-align: center; /* Centers text within the container */
+    color: black;
+}
+
+.about-btn2:hover {
+    background-color: white;
+}
+
+.default-text, .text-change {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Ensures text doesn't get cut off if it's longer */
+    text-align: center;
+}
+
+.default-text {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.text-change {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.about-btn2:hover .default-text {
+    opacity: 0;
+}
+
+.about-btn2:hover .text-change {
+    opacity: 1;
 }
 
 .form-group.col-4 {
     color: white;
-    padding: 20px;
-    margin-left: 480px;
+}
+
+.asteriskField {
+    display: none;
 }
 
 .form-row {
-    text-align: center;
-    margin-left: 580px;
-    margin-top: 30px;
-    display: inline;
+    color: black;
+    background: white;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 40px;
+    width: 100%; /* Full width of parent container */
+    max-width: 1320px; /* Max width for desktop */
+    height: 650px; /* Let height be determined by content */
+    display: flex;
+    flex-direction: row;
+    position: relative; 
 }
 
-.login-button.rounded-pill {
-    background-color: #8000FF;
-    width: 210px;
-    border: none;
-    color: white;
-    margin-left: 610px;
-    margin-top: 30px;
-    font-size: 30px;
+.form-row-2 {
+    color: black;
+    background: white;
+    border-radius: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 40px;
+    width: 100%; /* Full width of parent container */
+    max-width: 1320px; /* Max width for desktop */
+    height: 650px; /* Let height be determined by content */
+    display: flex;
+    flex-direction: row;
+    position: relative; 
 }
 
-.login-footer {
-    background-color: black;
-    color: white;
-    padding: 10px 0 100px 0;
-    text-align: center;
+.title-login {
+    padding-top: 64px;
+    padding-left: 50px;
+    font-weight: 700;
+    font-size: 31px;
+}
+
+.title-login-2 {
+    padding-top: 14px;
+    padding-left: 50px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.login-cred {
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-div {
+    padding-left: 50px;
+    padding-top: 34px;
+    width: 350px;
+}
+
+.form-div-2 {
+    padding-left: 50px;
+    padding-top: 34px;
+    width: 350px;
 }
 
 .login.navbar-link {
@@ -492,12 +1240,6 @@ button.signup.rounded-pill {
     color: white;
 }
 
-.login.navbar-brand {
-    color: white;
-    font-size: 30px;
-    margin-right: 1020px;
-}
-
 .form-group {
     color: white;
 }
@@ -505,62 +1247,64 @@ button.signup.rounded-pill {
 li {
     color: red;
     list-style: none;
-    display: none;
+    width: 300px;
 }
 
 #id_password1 {
-    border-radius: 40px;
-    height: 60px;
-    width: 370px;
-    border: none;
-    background-color: #f2e4ff;
-    color: #8000FF;
+    height: 40px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: white;
+    color: black; 
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 #id_password2 {
-    border-radius: 40px;
-    height: 60px;
-    width: 370px;
-    border: none;
-    background-color: #f2e4ff;
-    color: #8000FF; 
+    height: 40px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: white;
+    color: black; 
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 #id_username {
     border-radius: 40px;
-    height: 60px;
-    width: 370px;
-    border: none;
-    background-color: #f2e4ff;
-    color: #8000FF; 
+    height: 40px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: white;
+    color: black; 
     font-weight: 700;
-    text-align: center;
+    text-align: left;
+    padding-left: 15px;
     margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+#div_id_username {
+    padding-bottom: 40px;
 }
 
 #id_password {
-    border-radius: 40px;
-    height: 60px;
-    width: 370px;
-    border: none;
-    background-color: #f2e4ff;
-    color: #8000FF;
+    border-radius: 10px;
+    font-size: 15px;
+    height: 40px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: white;
+    color: black;
     font-weight: 700;
-    text-align: center;
-}
-
-button.signup-button.rounded-pill {
-    background-color: #8000FF;
-    width: 210px;
-    border: none;
-    color: white;
-    margin-left: 620px;
-    margin-top: 30px;
-    font-size: 30px;
+    text-align: left;
+    padding-left: 15px;
 }
 
 #id_amount {
@@ -583,14 +1327,6 @@ button.signup-button.rounded-pill {
     color: #8000FF;
     font-weight: 700;
     text-align: center;
-}
-
-.form.rounded-pill {
-    width: 200px!important;
-    background: #8000FF!important;
-    color: white;
-    border: none;
-    margin-left: 455px;
 }
 
 .form-inputs {
@@ -712,6 +1448,150 @@ div.buttons {
     transform-origin: 70% 70%;       
     display: inline-block;
   }
+
+  /* Basic styling for the navbar */
+.navbar {
+    background-color: #f8f9fa; /* Light background */
+}
+
+.nav-item {
+    width: 130px;
+}
+
+/* Styling for nav links */
+.navbar-nav .nav-link {
+  color: black;
+  padding: 22px 50px 22px 0;
+  font-size: 18px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect on nav links */
+.navbar-nav .nav-link:hover {
+    cursor: pointer;
+    color: #8000ff;
+}
+
+/* Styling for the user welcome message */
+.navbar-text.user {
+    font-weight: bold;
+    margin-right: 1rem;
+    font-size: 20px;
+}
+
+.login, .signup {
+    text-decoration: none;
+    color: white;
+    border-radius: 20px; /* Rounded pill style */
+}
+
+/* Logout button styling */
+.btn.btn-dark.rounded-pill {
+    color: white;
+    background-color: #343a40; /* Bootstrap's dark color */
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+}
+
+.btn.btn-dark.rounded-pill:hover {
+    background-color: #23272b; /* Darker shade for hover */
+}
+
+/* Sticky navbar */
+.position-sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+body {
+    color: black;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+    background: #333;
+    font-size: 1rem;
+}
+
+.btn-dark.rounded-pill {
+    color: white;
+    background-color: #333;
+    border: none;
+}
+
+/* Home Titles */
+.home-titles {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    border-radius: 10px;
+    background: #8000ff;
+}
+
+.home-company {
+    font-size: 7rem;
+    color: white;
+    font-weight: 200;
+}
+
+.wave {
+    animation: wave-animation 2.5s infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+}
+
+/* Tell More Section */
+.tell-more {
+    background-color: #8000FF;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.tell-budget {
+    color: #8000ff;
+    font-weight: 700;
+}
+
+.tops {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+    padding-top: 27px;
+}
+
+.track, .save, .budget {
+    color: black;
+    font-size: 16px;;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    height: 265px;
+    width: 422px;
+}
   
 @keyframes wave-animation {
       0% { transform: rotate( 0.0deg) }
@@ -728,517 +1608,612 @@ div.buttons {
     display: none;
 }
 
-@media only screen and (max-width: 390px) {
-    body {
-        overflow: auto;
+.login-page-btn {
+    width: 265px!important; /* Full-width for mobile */
+    margin: 20px 0px 0px 50px;/* Adjust padding for mobile */
+    height: 40px; /* Let height adjust to content */
+    font-size: 16px;
+    border-radius: 10px;
+    background: black;
+    color: white; 
+}
+
+
+@media only screen and (max-width: 430px) {
+    .container {
+        
     }
 
-    .navbar-expand-lg .navbar-collapse {
-        font-size: 10px!important;
-        display: block;
-    }
-    
-    a.navbar-link, .navbar-item.user {
-        font-size: 15px;
-        display: block;
+    .login-page-btn {
+        width: 265px;/* Adjust padding for mobile */
+        height: 60px; /* Let height adjust to content */
+        font-size: 16px;
+        border-radius: 10px;
+        background: black;
+        color: white; 
+        margin: 40px 0px 0px 0px;
         padding: 0px;
-        text-align: center;
     }
 
-    span.btn.btn-dark.rounded-pill {
-        display: inline-block;
-    }
-
-    .home-company, .home-quote, .home-quoteTwo {
+    .home-company {
         font-size: 40px;
-        margin: 20px 40px 20px 40px;
-
     }
 
     .home-titles {
-        padding: none;
-        margin: none;
-        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 100px;
+        border-radius: 10px;
+        background: #8000ff;
+        width: 410px;
+    }
+
+    .home-quote {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .home-quoteTwo {
+        font-size: 20px;
     }
 
     .tell-more-list {
-        margin: 0;
-        height: 300px;
-        padding: 0;
-    }
+        display: flex; /* Switch to flexbox for easier centering */
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center children horizontally */
+        gap: 40px; /* Match margin-bottom for consistency */
+      }
 
-    .tell-more {
-        margin: 0 45px 0 45px;
-        padding: 0px;
-    }
+      .tell-more {
+        width: 100%;
+        max-width: 430px; /* Match viewport width */
+        margin: 0 auto; /* Add padding for better spacing */
+        box-sizing: border-box; /* Include padding in width */
+      }
 
     .track, .save, .budget {
-        font-size: 10px;
-        padding: 5px;
-        height: 100%;
-    }
-
-    .signup-home {
-        text-align: center;
-    }
-
-    button.signup.rounded-pill {
-        border: none;
-        background-color: white;
-        width: 170px;
-        height: 40px;
-        font-size: 14px;
-        margin: 0px;
-        padding: 0px;
-    }
-}
-
-@media only screen and (max-width: 844px) {
-    button.signup.rounded-pill {
-        border: none;
-        background-color: white;
-        width: 170px;
-        height: 40px;
-        font-size: 14px;
-        margin-top: 20px;
-        margin-left: -10px!important;
-    }
-
-    button.signup-button.rounded-pill {
-        background-color: #8000FF;
-        width: 210px;
-        border: none;
-        color: white;
-        margin-left: 90px!important;
-        margin-top: 30px;
-        font-size: 20px!important;
-    }
-    
-    .about-title {
-        text-align: center;
-        font-size: 40px;
-        color: white;
-        font-weight: 400;
-        margin-top: 40px;
         color: black;
+        font-size: 14px;
+        background: white;
+        border-radius: 10px;
+        padding: 50px 40px 40px 40px;
+        position: relative;
+        height: 301px;
+        width: 329px;
+        margin-bottom: 40px;
+        margin-left: auto; /* Center within parent */
+        margin-right: auto;
     }
 
-    .form-group.col-4 {
-        color: white;
-        padding: 20px;
-        margin-left: 130px;
+    .emoji-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #8ACB88;
+        position: absolute;
+        top: -25px;
+        left: calc(50% - 25px); /* Center within 390px block */
         display: flex;
         justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+    
+      .emoji-circle-container {
+        position: absolute;
+        top: -25px;
+        left: 0;
+        width: 100%; /* Match block width for centering */
+        height: 50px;
+        overflow: hidden;
+      }
+
+    .tops {
+        font-weight: 700;
+        display: block;
+        padding-top: 15px;
     }
 
-    button.signup.rounded-pill {
-        border: none;
-        background-color: white;
-        width: 170px;
-        height: 40px;
-        font-size: 14px;
-        margin-left: -10px;
-        margin-top: 20px;
+    .button-section {
+        background-color: #8ACB88;
+        height: 78px;
+        width: 329px;
+        padding: 0px;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 10px;
+        position: relative; /* Necessary for absolute positioning of children */
+        display: inline-block; /* To make sure it respects its parent's width */
+        text-align: center; /* Centers text within the container */
+        color: black;
+        margin: 0px auto;
     }
 
-    button.signup-button.rounded-pill {
-        background-color: #8000FF;
-        width: 170px;
-        height: 40px;
-        border: none;
+    .button-padding {
+        text-align: center;
+    }
+
+    .footer {
+        background-color: black;
         color: white;
-        margin-left: 107px;
-        margin-top: 60px;
-        font-size: 23px;
+        margin: 0 auto;
+        width: 329px;
+        height: 226px;
+        border-radius: 10px;
+        display: block;
+        justify-content: center; /* This will push elements to opposite ends */
+        align-items: center;
     }
 
-    #id_password1 {
-        border-radius: 40px;
-        height: 60px;
-        width: 290px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
+    .left-content {
+        margin: 30px 25px 15px 25px;
+    }
+    
+    .right-content {
+        margin: 15px 25px 15px 25px;
+    }
+
+    .nav-link {
+        text-align: left;
+    }
+
+    .form-row {
+        color: black;
+        background: white;
+        border-radius: 10px;
+        margin: 32px auto;
+        width: 329px; 
+        height: auto; /* Let height be determined by content */
+        display: flex;
+        flex-direction: column-reverse;
+        position: relative;
+        padding: 15px 32px 15px 32px;
+    }
+
+    .image {
+        display: flex;
+        position: static;
+        width: 265px;
+        height: 270px; /* 265px (img) + 30px (left padding) + 30px (right padding) */
+        padding: 0px; /* 30px padding on left and right */
+        justify-content: left;
+      }
+    
+      .image img {
+        width: 265px; /* Fill the .image div */
+        height: 270px;
+      }
+
+      .form-div {
+        padding: 34px 0px 0px 0px; /* Adjust padding */
+        width: 100%; /* Full width */
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+
+    .form-div-2 {
+        padding: 10px 0px 0px 27px;
+        width: 410px;
+
+    }
+
+    #div_id_username {
+        padding-bottom: 40px;
+    }
+
+    .title-login {
+        padding-top: 30px;
+        padding-left: 0px;
         font-weight: 700;
-        text-align: center;
+        font-size: 31px;
     }
 
-    div#div_id_password1.control-group {
-        margin-top: 35px;
+    .title-login-2 {
+        padding-top: 14px;
+        padding-left: 0px;
+        font-weight: 400;
+        font-size: 15px;
     }
 
-    div#div_id_password2.control-group {
-        margin-top: 35px;
-    }
-
-    #id_password2 {
-        border-radius: 40px;
-        height: 60px;
-        width: 290px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
+    .sign-in {
     }
 
     #id_username {
         border-radius: 40px;
         height: 60px;
-        width: 290px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
+        width: 265px;
+        border: 1px solid black;
+        background-color: white;
+        color: black; 
         font-weight: 700;
-        text-align: center;
+        text-align: left;
+        padding-left: 15px;
         margin-bottom: 15px;
+        border-radius: 10px;
     }
 
     #id_password {
-        border-radius: 40px;
+        border-radius: 10px;
+        font-size: 15px;
         height: 60px;
-        width: 290px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
+        width: 265px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
         font-weight: 700;
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .login-button.rounded-pill.login {
-        background-color: #8000FF;
-        width: 170px;
-        border: none;
-        color: white;
-        margin-left: 111px;
-        margin-top: 30px;
-        font-size: 23px;
-    }
-
-    .about-info {
-        font-size: 17px;
-        font-weight: 200;
-        line-height: 40px;
-        word-spacing: 5px;
-        color: white;
-        text-align: center;
-        margin-left: 50px;
-        margin-right: 50px;
-        padding-bottom: 100px;
-    }
-    
-    .about-welcome {
-        text-align: center;
-        font-size: 30px;
-        color: white;
-        font-weight: 400;
-        margin-top: 90px;
-        margin-bottom: 30px;
-    }
-    
-    .about-footer {
-        background-color: black;
-        color: white;
-        padding: 10px 0 10px 0;
-        text-align: center;
-        margin-top: -30px;
-    }
-
-    .logo {
-        width: 80px;
-        height: 30px;
-    }
-
-    input.rounded-pill {
-        height: 50px!important;
-        width: 300px!important;
-        font-size: 16px;
-        margin-top: 50px;
-        margin-bottom: 70px;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: bold;
-        border: none;
-    }
-
-    input.search.rounded-pill {
-        width: 85px!important;
-        background: #8000FF!important;
-        color: white;
-        border: none;
-        height: 40px!important;
-        margin-top: 0;
-    }
-
-    .gallery .card {
-        transition: .3s linear;
-        height: 200px;
-        width: 200px;
-    }
-
-    p.card-title {
-        font-size: 16px;
-        font-weight: bolder;
-        color: #8000FF!important;
-        text-decoration: none!important;
-        text-align: center;
-        margin-top: -7px;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        margin-left: 80px;
-    }
-
-    #id_amount {
-        border-radius: 40px;
-        height: 50px;
-        width: 270px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    #id_month {
-        border-radius: 40px;
-        height: 50px;
-        width: 270px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    input.form.rounded-pill {
-        width: 160px!important;
-        height: 40px!important;
-        background: #8000FF!important;
-        color: white;
-        border: none;
-        margin-left: 100px;
-    }
-
-    .form-title {
-        text-align: center;
-        padding-top: 70px;
-        font-size: 40px;
-        color: #8000FF;
-        font-weight: 600;
-    }
-
-    .detail-header {
-        font-size: 20px;
-        margin-left: 40px;
-    }
-
-    .detail-amount {
-        font-size: 30px;
-        color: #8000FF;
-        font-weight: 800;
-    }
-
-    .company.detail.rounded-pill {
-        width: 320px!important;
-    }
-
-    .date-add.detail.rounded-pill {
-        width: 210px!important;
-    }
-
-    input.add.rounded-pill {
-        width: 130px!important;
-        height: 40px!important;
-        background-color: #8000FF;
-        color: white;
-        border: none;
-        font-size: 14px;
-        margin-top: 23px;
-    }
-
-    .detail-data {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
         text-align: left;
-        gap: 20px;
+        padding-left: 15px;
+    }
+
+    #id_password1, #id_password2 {
+        border-radius: 10px;
+        font-size: 15px;
+        height: 40px;
+        width: 250px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        font-weight: 700;
+        text-align: left;
+        padding-left: 15px;
+    }
+
+    .already {
+        padding: 40px 32px 40px 32px;
+        margin: 0px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .form-row-2 {
+        color: black;
+        background: white;
+        border-radius: 10px;
+        margin: 10px 10px 10px 20px;
+        width: 390px; /* Max width for desktop */
+        height: 550px; /* Let height be determined by content */
+        display: flex;
+        flex-direction: row;
+    }
+
+    li {
+        color: red;
+        list-style: none;
+        width: 300px;
+    }
+
+    .list-container {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 410px;
+        margin-top: 18px;
+    }
+
+    .current-budget {
+        font-size: 25px;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column; /* Pushes children apart */
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 30px;
+        margin: 0px;
+    }
+
+    .current-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3px;
+        width: 410px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 40px;
+        padding-bottom: 47px;
+        text-align: center;
+    }
+
+    .view-btn {
+        color: white;
+        background: black;
+        border-radius: 10px;
+        width: 105px;
+        height: 26px;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-left: 0px;
         margin-top: 10px;
     }
 
-    .edit {
-        height: 20px;
-        width: 20px;
-    }
-
-    .detail-hr {
-        margin: 2rem 0;
-        color: inherit;
-        border: 0;
-        border-top: 4px solid;
-        opacity: .25;
-    }
-
-    .pt-3 {
-        text-align: center;
-        margin-top: 60px;
-        font-size: 22px;
-        color: #8000FF;
-        font-weight: 600;
-    }
-
-    #id_name {
-        border-radius: 40px;
-        height: 45px;
-        width: 300px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-        font-size: 17px;
-    }
-
-    #id_title {
-        border-radius: 40px;
-        height: 45px;
-        width: 300px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-        font-size: 17px;
-    }
-
-    #id_date {
-        border-radius: 40px;
-        height: 45px;
-        width: 300px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-        font-size: 17px;
-    }
-
-    #id_price {
-        border-radius: 40px;
-        height: 45px;
-        width: 300px;
-        border: none;
-        background-color: #f2e4ff;
-        color: #8000FF;
-        font-weight: 700;
-        text-align: center;
-        font-size: 17px;
-    }
-
-    .edit.rounded-pill {
-        width: 150px!important;
-        height: 40px!important;
-        background: #8000FF!important;
-        color: white;
-        border: none;
-        margin-left: 108px;
-    }
-
-    .title.pt-5 {
+    .expense-btn {
+        padding-top: 28px 29px 28px 29px;
+        background-color: #8ACB88;
         color: black;
-        font-weight: 600;
-        font-size: 22px;
-        text-align: center;
-        margin-top: 100px;
-    }
-
-    .button.is-danger {
-        border-radius: 80px;
-        width: 110px;
-        background: red!important;
-        color: white;
         border: none;
-        font-size: 18px;
-    }
-
-    .form-group.col-4.login {
-        margin-left: 130px;
-    }
-}
-
-@media only screen and (max-width: 2100px) {
-    span.home-nav {
-        width: 100%;
-        margin-left: 675px!important;
-    }
-
-    .base.navbar-area {
-        width: 88%;
-        margin-left: 580px!important;
-    }
-
-    button.signup-button.rounded-pill {
-        background-color: #8000FF;
-        width: 210px;
-        border: none;
-        color: white;
-        margin-left: 855px;
-        margin-top: 30px;
-        font-size: 30px;
-    }
-
-    .form-group.col-4 {
-        color: white;
-        padding: 20px;
-        margin-left: 650px;
-    }
-
-    .login-button.rounded-pill {
-        background-color: #8000FF;
-        width: 210px;
-        border: none;
-        color: white;
-        margin-left: 865px;
-        margin-top: 30px;
-        font-size: 30px;
-    }
-
-    button.signup.rounded-pill {
-        border: none;
-        background-color: white;
-        width: 170px;
-        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-right: 0px;
+        margin-top: 10px;
+        width: 105px;
+        height: 26px;
         font-size: 14px;
-        margin-left: 755px;
-        margin-top: 20px;
+        font-weight: 500;
     }
 
-    .edit {
-        height: 30px;
-        width: 30px;
-        color: #8000FF
+    .table-wrapper {
+        width: 100%;
+        max-height: 400px; /* Increase max-height for more content visibility */
+        overflow-y: auto;
+        overflow-x: auto; /* Enable horizontal scrolling */
+        position: relative; /* For positioning the fixed column */
+        -webkit-overflow-scrolling: touch;
     }
 
-    .trash {
-        color: red;
+    .current-remain-2, .current-total-2, .current-days-2 {
+        font-size: 20px;
+    }
+
+    .table-bg {
+        padding-left: 0;
+        padding-right: 0;
+        height: auto; /* Allow height to adjust based on content */
+      }
+
+      .table {
+        width: 800px; /* Wider than viewport to enable horizontal scrolling */
+        border-collapse: separate; /* Required for fixed column styling */
+        border-spacing: 0;
+      }
+
+      .table th,
+      .table td {
+        font-size: 14px; /* Smaller font for mobile */
+        padding: 10px; /* Reduce padding for mobile */
+        min-width: 100px; /* Ensure columns don’t collapse too much */
+        white-space: nowrap; /* Prevent text wrapping */
+      }
+
+      .table th:first-child,
+      .table td:first-child {
+        position: sticky;
+        left: 0;
+        background-color: #F5F5F5; /* Match thead background for th */
+        z-index: 3; /* Above other cells */
+        width: 120px; /* Fixed width for the first column */
+        border-right: 1px solid #f2e4ff; /* Visual separator */
+      }
+
+      .table td:first-child {
+        background-color: white;
+      }
+
+      .table th {
+        z-index: 2; /* Above tbody cells but below fixed column */
+      }
+
+      .clickable-row {
+        height: auto; /* Adjust height for mobile */
+      }
+
+      .delete-btn-budget {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+        padding: 5px;
+      }
+
+      .search-bar {
+        width: 100%; /* Full width for mobile */
+        max-width: 250px;
+      }
+    
+      .list.control {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    
+      .button.is-dark {
+        width: 120px;
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .empty-state {
+        padding: 20px;
+      }
+    
+      .empty-emoji {
+        font-size: 24px;
+      }
+    
+      .empty-sub {
+        font-size: 18px;
+      }
+    
+      .empty-sub-2 {
+        font-size: 12px;
+      }
+
+      .about-info {
+        width: 329px;
+        height: 498px;
+        margin-top: 40px;
+    }
+    
+
+    .about-img {
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        height: 314px;
+        width: 258px;
+      }
+
+      .about-page {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        width: 100%; 
+        margin: 0 auto;
+    }
+
+    .about1 {
+        width: 329px;
+        font-size: 32px;
+        font-weight: 700;
+        color: white;
+        margin: 0px;
+    }
+    
+    .about2 {
+        width: 329px;
+        font-size: 15px;
+        font-weight: 400;
+        color: white;
+        margin: 0px;
+        padding-top: 33px;
+    }
+    
+    .about3 {
+        width: 329px;
+        font-size: 15px;
+        font-weight: 400;
+        color: white;
+        padding-top: 10px;
+        padding-bottom: 33px;
+    }
+
+    .about-btn1 {
+        width: 329px;
+        height: 78px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .about-btn2 {
+        width: 329px;
+        height: 78px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .about-boxes {
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-bottom {
+        color: white;
+        width: 329px;
+        font-weight: 700;
+        font-size: 32px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 329px; /* Match other sections */
+        margin: 0 auto;
+        padding: 0; /* Remove default padding */
+      }
+    
+      .navbar .container-fluid {
+        padding: 0;
+        display: flex;
+        justify-content: space-between; /* Ensure brand and toggler are spaced */
+        align-items: center;
+        width: 329px;
+      }
+    
+      .navbar-brand {
+        font-size: 1.25rem; /* Adjust size for mobile */
+      }
+    
+      .navbar-toggler {
+        border: none; /* Remove default border */
+        padding: 5px; /* Adjust padding */
+        margin-right: 21px;
+      }
+    
+      .navbar-toggler-icon {
+        width: 24px; /* Adjust icon size */
+        height: 24px;
+      }
+    
+      .navbar-collapse {
+        background-color: #f8f9fa; /* Match bg-light background */
+        padding: 10px;  /* Space between toggler and menu */
+        border-radius: 5px; /* Optional: rounded corners */
+        z-index: 1000;
+        position: absolute;
+        top: 85%;
+        width: 329px;
+        border-top: none;
+      }
+    
+      .navbar-nav {
+        display: flex;
+        align-items: center;
+      }
+    
+      .navbar-nav .nav-item {
+        margin: 5px 0; /* Space between nav items */
+      }
+    
+      .sign-in-btn,
+      .logout-btn {
+        display: block;
+        margin: 10px auto; /* Center buttons in collapsed menu */
+      }
+
+      .logout-btn {
+        width: 300px;
+      }
+    
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+      }
+
+      .navbar-brand {
+        color: black;
+        font-size: 28px;
+        background: white;
+        padding-top: 26px;
+        padding-left: 22px;
+        padding-bottom: 22px;
+        border-radius: 10px;
+        height: 78px;
+        align-items: left;
+    }
+
+    .container-fluid {
+        padding-left: 62px;
+        padding-top: 31px;
+        padding-right: 60px;
+        padding-bottom: 10px;
+        width: 329px;
+        background-color: white;
+        display: flex;
+        flex-direction: row-reverse;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+
+    a.nav-link {
+        padding: 0px!important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .user-info {
+        margin: 0 auto!important;
     }
 }
-
-@media only screen and (max-width: 1600px) {
-    span.home-nav {
-        width: 100%;
-        margin-left: 220px!important;
-    }
-
-    .base.navbar-area {
-        width: 100%;
-        margin-left: 220px!important;
-    }
-}
-
-

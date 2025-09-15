@@ -14,65 +14,84 @@
     </head>
     <body>
         <div class="home-top">
-        <nav class="position-sticky navbar-expand-lg">
-            <span class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                <a class="container-fluid justify-content-start navbar-brand" href="/">
-                    <img class= 'logo' src="https://i.im.ge/2022/10/14/27JHa8.Group-12.png" alt="">
-                </a>
-                <span class="navbar-area">
-            <a class="about navbar-link " href="/about">About</a>
-                {% if user.is_authenticated %}
-                    <a class="navbar-link" href="/budget">List</a>
-                    <a class="navbar-link" href="/budget/new">Add a Budget</a>
-                    <span class="navbar-item user" >Welcome: {{user.username}}</span>
-                    <span type="button" class="btn btn-dark rounded-pill">
-                    <a class="navbar-link" href="{% url 'logout' %}">
-                        Logout
-                    </a>
-                </span>
-            </span>
-            {% else %}
-                    <a class='login navbar-link rounded-pill' href="{% url 'login' %}">Log In</a>
-                    <a class="signup navbar-link rounded-pill" href="{% url 'signup' %}">Sign Up</a>
-            {% endif %}                  
-            </span>
-        </nav>
-        <h1 class="title-login">Sign Up</h1>
-        {% block content %}
-<form class='sign-in' method="post" action="{% url 'signup' %}">
+            <header class="position-sticky top-0 bg-light">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <div class="collapse navbar-collapse" id="navbarMain">
+                        <a class="navbar-brand" href="/">
+                            myBudget
+                        </a>
+                        
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                {% if user.is_authenticated %}
+                                    <li class="nav-item"><a class="nav-link" href="/budget">Budgets</a></li>
+                                {% endif %}
+                                <li class="nav-item"><a class="nav-link" href="/about">How it works</a></li>
+                            </ul>
+                        </div>
+                        {% if not user.is_authenticated %}
+                            <a class="btn sign-in-btn" href="{% url 'login' %}">Sign in</a>
+                        {% else %}
+                            <div class="user-info">
+                                <a class="btn logout-btn" href="{% url 'logout' %}">Logout</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </header>
+            <section class="form-row-2">
+                {% block content %}
+    <form class='sign-in' method="post" action="{% url 'signup' %}">
+        <h1 class="title-login">Get started</h1>
+        <h3 class="title-login-2">Welcome to myBudget</h3>
     {% csrf_token %}
-    <div class="form-row">
-        <div class="form-group">
+    <div class="form-div-2">
+        <div class="form-group col-4 login">
             {{ form.username|as_crispy_field }}
             <div class="text-input">
             
             </div>
         </div>
-        <div class="help form-group">
+        <div class="form-group col-4 login">
             {{ form.password1|as_crispy_field }}
             <div class="text-input rounded-pill">
-                <div class="form-group">
+                <div class="form-group col-4 login">
                     {{ form.password2|as_crispy_field }}
                     <div class="text-input rounded-pill">
             </div>
         </div>
     </div>
     </div>
-    <button class='signup-button rounded-pill' type="submit" class="btn">Sign Up</button>
+    </div>
+    <button class='login-page-btn' type="submit" class="btn">Sign Up</button>
 </form>
+<div class="image">
+    <img src="{% static 'assets/image 3.png' %}" alt="Description of Image">
+</div>
 {% endblock %}
+</section>
 </div>
     <div class="container">
         </div>
       </div>
     </div>
   </body>
-  <footer class="login-footer">
-    <p class="p-footer">Created by: Joey Caltabellotta</p>
-    <p class="p-footer">Contact: joeycalt@yahoo.com</p>
-    <p class="p-footer">©2022</p>
+  <footer class="footer text-white">
+    <div class="left-content">
+        <p class="fs-5">Questions?</p>
+        <p class="fs-5">Contact us at support@mybudget.com</p>
+    </div>
+    <div class="right-content">
+        <p class="fs-5 how-it-works"><a class="nav-link" href="/about">How it works</a></p>
+        <p class="fs-5">©️2025 myBudget is a fictitious app created by Joey Caltabellotta</p>
+    </div>
 </footer>
 </html>
+
+
+
+
+
 
 
 
