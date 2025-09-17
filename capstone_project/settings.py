@@ -83,7 +83,11 @@ WSGI_APPLICATION = 'capstone_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'capstone',
+        'NAME': os.getenv('PGDATABASE'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('PGPASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT'),
     }
 }
 
