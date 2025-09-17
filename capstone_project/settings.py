@@ -29,6 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*.onrender.com', 'web-production-f2a58.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-f2a58.up.railway.app']
 
 
 # Application definition
