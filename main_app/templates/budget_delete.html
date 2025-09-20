@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+{% block title%} Delete {{purchased.name}}?{% endblock %}
+{% block content %}
+<h1 class="title pt-5">Are you sure you want to delete your budget of ${{budget.amount}} for the month of {{budget.month}}?</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="buttons">
+        <input class="button is-danger" type="submit" value="Confirm" />
+        <a class="button is-primary" href="{% url 'budget_detail' budget.pk %}">Cancel</a>
+    </div>
+</form>
+{% endblock %}

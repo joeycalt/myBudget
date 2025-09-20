@@ -91,45 +91,66 @@ class BudgetListAssoc(View):
             Item.objects.get(pk=pk).buys.add(buy_pk)
         return redirect('/purchases/')
 
-class BudgetForm(View):
-    def get(self, request):
-        return render(request, 'budget_form.html')
+class BudgetForm(CreateView):
+    model = Budget
+    fields = ['amount', 'month']
+    template_name = 'budget_form.html'
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(BudgetForm, self).form_valid(form)
+    def get_success_url(self):
+        print(self.kwargs)
+        return reverse('budget_list') 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.layout = Layout(
+            Div(
+                Div('amount', css_class='form-inputs'),
+                Div('month', css_class='form-inputs'),
+                css_class='form-row'
+            ),
+        ),
 
-    def post(self, request):
-        try:
-            month = request.POST.get("month")  # "August"
-            amount = request.POST.get("amount")  # "5000" (string from form)
-            logger.info("Received: month=%s, amount=%s (type=%s)", month, amount, type(amount))
-            # Explicitly convert amount to Decimal
-            budget = Budget.objects.create(
-                user=request.user,
-                month=month,
-                amount=Decimal(amount)  # Ensure Decimal conversion
-            )
-            logger.info("Budget created: id=%s, amount=%s (type=%s)", budget.pk, budget.amount, type(budget.amount))
-            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                date_range = budget.get_date_range()
-                logger.info("Date range: %s", date_range)
-                spent = budget.get_spent_amount()
-                logger.info("Spent amount: %s (type=%s)", spent, type(spent))
-                remaining = budget.get_remaining_amount()
-                logger.info("Remaining: %s (type=%s)", remaining, type(remaining))
-                response_data = {
-                    'success': True,
-                    'budget': {
-                        'id': budget.pk,
-                        'month': budget.month,
-                        'date_range': date_range,
-                        'amount': str(budget.amount),
-                        'remaining': str(remaining)
-                    }
-                }
-                logger.info("Response data: %s", response_data)
-                return JsonResponse(response_data)
-            return redirect('budget_list')
-        except Exception as e:
-            logger.error("Error in BudgetForm.post: %s", str(e), exc_info=True)
-            return JsonResponse({'success': False, 'error': str(e)}, status=500)
+# class BudgetForm(View):
+#     def get(self, request):
+#         return render(request, 'budget_form.html')
+
+#     def post(self, request):
+#         try:
+#             month = request.POST.get("month")  # "August"
+#             amount = request.POST.get("amount")  # "5000" (string from form)
+#             logger.info("Received: month=%s, amount=%s (type=%s)", month, amount, type(amount))
+#             # Explicitly convert amount to Decimal
+#             budget = Budget.objects.create(
+#                 user=request.user,
+#                 month=month,
+#                 amount=Decimal(amount)  # Ensure Decimal conversion
+#             )
+#             logger.info("Budget created: id=%s, amount=%s (type=%s)", budget.pk, budget.amount, type(budget.amount))
+#             if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+#                 date_range = budget.get_date_range()
+#                 logger.info("Date range: %s", date_range)
+#                 spent = budget.get_spent_amount()
+#                 logger.info("Spent amount: %s (type=%s)", spent, type(spent))
+#                 remaining = budget.get_remaining_amount()
+#                 logger.info("Remaining: %s (type=%s)", remaining, type(remaining))
+#                 response_data = {
+#                     'success': True,
+#                     'budget': {
+#                         'id': budget.pk,
+#                         'month': budget.month,
+#                         'date_range': date_range,
+#                         'amount': str(budget.amount),
+#                         'remaining': str(remaining)
+#                     }
+#                 }
+#                 logger.info("Response data: %s", response_data)
+#                 return JsonResponse(response_data)
+#             return redirect('budget_list')
+#         except Exception as e:
+#             logger.error("Error in BudgetForm.post: %s", str(e), exc_info=True)
+#             return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 class BudgetCreate(LoginRequiredMixin, View):
     def get(self, request, pk):
